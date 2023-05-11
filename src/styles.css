@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "primeicons/primeicons.css";
+
 .navbar-wrapper {
     position:fixed ;
     top: 0;
@@ -14,3 +16,12 @@
   .homepage-wrapper {
     padding-top: 0px; /* Altura do navbar */
   }
+
+  body{
+  overflow:scroll ;
+  -ms-overflow-style: none;/*hide in edge and explorer*/
+  scrollbar-width: none;/*firefox*/
+}
+body::-webkit-scrollbar{
+  display: none;/*hide scroll ball chrome, safari and opera*/
+}
