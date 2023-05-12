@@ -72,8 +72,8 @@
                   </li>
                 </ul>
               </div>
-              <div class=" border-2 w-8 h-8 border-yellow-500 rounded-full flex justify-center">
-                <a class="pi pi-user text-yellow-500 text-xl"></a>
+              <div [ngClass]="{'border-yellow-500':teste, 'border-white':!teste}" class=" border-2 w-8 h-8  rounded-full flex justify-center" >
+                <a [ngClass]="{'text-yellow-500':teste, 'text-white':!teste}" class="pi pi-user text-xl" (click)="teste1()" [routerLink]="['/login']"></a>
               </div>
               </div>
           </nav>

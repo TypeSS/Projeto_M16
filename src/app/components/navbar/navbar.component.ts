@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+teste: boolean = false;
 
+teste1(){
+  this.teste = !this.teste
+}
 }
