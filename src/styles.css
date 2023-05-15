@@ -24,3 +24,7 @@
 body::-webkit-scrollbar{
   display: none;/*hide scroll ball chrome, safari and opera*/
 }
+
+html {
+  scroll-behavior: smooth;
+}
