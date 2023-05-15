@@ -20,8 +20,7 @@
   body{
   overflow:scroll ;
   -ms-overflow-style: none;/*hide in edge and explorer*/
-  scrollbar-width: none;/*firefox*/
-}
+  scrollbar-width: none;/*firefox*/;}
 body::-webkit-scrollbar{
   display: none;/*hide scroll ball chrome, safari and opera*/
 }

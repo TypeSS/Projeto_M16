@@ -47,27 +47,27 @@
                     <span class="text-yellow-500">M<span class="text-white">ENU </span><span class="text-white">DO </span><span class="text-yellow-500">C</span><span class="text-white">HEFE</span></span>
                    </div>
                    <div>
-                <ul
+                <ul 
                   class="flex flex-col p-4 mt-4 border border-gray-100 md:border-transparent rounded-lg bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                   <li>
-                    <a [routerLink]="'/home'" routerLinkActive="router-link-active"
-                       class="block uppercase py-2 pl-3 pr-4  font-bold rounded-lg md:text-yellow-500 px-4  hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500">
+                    <a [routerLink]="'/home'" [routerLinkActiveOptions]="linkActiveOptions" routerLinkActive="" fragment="teste1"
+                       class="block uppercase py-2 pl-3 pr-4  font-bold rounded-lg text-white px-4  hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth">
                     HOME
                     </a>
                   </li>
                   <li>
-                    <a [routerLink]="'/services'" routerLinkActive="router-link-active"
-                       class="block uppercase py-2 pl-3 pr-4  font-bold rounded-lg md:text-white px-4 hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500 ">
+                    <a [routerLink]="'/home'" [routerLinkActiveOptions]="linkActiveOptions" routerLinkActive="text-yellow-500 scroll-smooth" fragment="menu"
+                       class="block uppercase py-2 pl-3 pr-4  font-bold rounded-lg text-white  px-4 hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth  ">
                      MENU</a>
                   </li>
                   <li>
-                    <a [routerLink]="'/about'"
-                       class="block uppercase py-2 pl-3 pr-4 font-bold rounded-lg md:text-white px-4 hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500">
+                    <a [routerLink]="'/home'" [routerLinkActiveOptions]="linkActiveOptions" routerLinkActive="text-yellow-500" fragment="algo"
+                       class="block uppercase py-2 pl-3 pr-4 font-bold rounded-lg text-white px-4 hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500">
                      ALGO</a>
                   </li>
                   <li>
-                    <a [routerLink]="'/contact'"
-                       class="block uppercase py-2 pl-3 pr-4 font-bold rounded-lg md:text-white px-4 hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500">
+                    <a [routerLink]="'/home'" routerLinkActive="text-yellow-500" fragment="contact"  [routerLinkActiveOptions]="linkActiveOptions"
+                       class="block uppercase py-2 pl-3 pr-4 font-bold rounded-lg text-white  px-4 hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500">
                       CONTACTO</a>
                   </li>
                 </ul>

@@ -12,6 +12,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { SpecialsComponent } from './pages/specials/specials.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ChefsComponent } from './pages/chefs/chefs.component';
+import { MainpageComponent } from './pages/mainpage/mainpage.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ChefsComponent } from './pages/chefs/chefs.component';
     SpecialsComponent,
     LoginComponent,
     ChefsComponent,
+    MainpageComponent,
   ],
   imports: [
     BrowserModule,
