@@ -47,7 +47,7 @@
                     <span class="text-yellow-500">M<span class="text-white">ENU </span><span class="text-white">DO </span><span class="text-yellow-500">C</span><span class="text-white">HEFE</span></span>
                    </div>
                    <div>
-                <ul 
+                <ul
                   class="flex flex-col p-4 mt-4 border border-gray-100 md:border-transparent rounded-lg bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                   <li>
                     <a [routerLink]="'/home'" [routerLinkActiveOptions]="linkActiveOptions" routerLinkActive="text-yellow-500"
@@ -72,8 +72,8 @@
                   </li>
                 </ul>
               </div>
-              <div [ngClass]="{'border-yellow-500':teste, 'border-white':!teste}" class=" border-2 w-8 h-8  rounded-full flex justify-center" >
-                <a [ngClass]="{'text-yellow-500':teste, 'text-white':!teste}" class="pi pi-user text-xl" (click)="teste1()" [routerLink]="['/login']"></a>
+              <div [ngClass]="{'border-yellow-500':verif, 'border-white':!verif}" class=" border-2 w-8 h-8  rounded-full flex justify-center" >
+                <a [ngClass]="{'text-yellow-500':verif, 'text-white':!verif}" class="pi pi-user text-xl" [routerLink]="['/login']"></a>
               </div>
               </div>
           </nav>

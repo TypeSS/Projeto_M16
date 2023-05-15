@@ -5,3 +5,13 @@
     height: 100vh;
     backdrop-filter: blur(2px);
 }
+
+span > .p-inputtext:enabled:focus{
+  border-color: #4D80CA !important;
+  box-shadow: 0 0 0 0.02rem green !important;
+}
+
+
+span > .p-inputtext:hover{
+  box-shadow: 0 0 0 0.02rem green !important;
+}

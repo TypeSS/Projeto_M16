@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 export interface IsActiveMatchOptions {
   matrixParams: 'exact'|'subset'|'ignored';
@@ -14,18 +14,22 @@ export interface IsActiveMatchOptions {
 })
 
 
-export class NavbarComponent {
-teste: boolean = false;
- 
-public linkActiveOptions: IsActiveMatchOptions = {
-  matrixParams: 'exact',
-  queryParams: 'exact',
-  paths: 'exact',
-  fragment: 'exact',
-};
+export class NavbarComponent implements OnInit {
+  public linkActiveOptions: IsActiveMatchOptions = {
+    matrixParams: 'exact',
+    queryParams: 'exact',
+    paths: 'exact',
+    fragment: 'exact',
+  };
 
+verif?: boolean = false
 
-teste1(){
-  this.teste = !this.teste
-}
+ngOnInit() {
+  const id = localStorage.getItem('id:');
+
+  console.log(id)
+  if (id == '2'){
+    this.verif = true
+  }
+ }
 }
