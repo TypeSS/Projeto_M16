@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./chefs.component.css']
 })
 export class ChefsComponent {
-
+  showChefInfo = false;
 }
