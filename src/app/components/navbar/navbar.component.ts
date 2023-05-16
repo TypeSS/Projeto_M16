@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UseractionService } from 'src/app/services/useraction/useraction.service';
 
 export interface IsActiveMatchOptions {
   matrixParams: 'exact'|'subset'|'ignored';
@@ -22,14 +23,15 @@ export class NavbarComponent implements OnInit {
     fragment: 'exact',
   };
 
-verif?: boolean = false
+  verif: boolean = false;
+
+constructor (private useraction: UseractionService){}
 
 ngOnInit() {
-  const id = localStorage.getItem('id:');
+this.verif = this.useraction.verifyUser()
+}
 
-  console.log(id)
-  if (id == '2'){
-    this.verif = true
-  }
- }
+logOut(){
+  this.useraction.logOut()
+}
 }

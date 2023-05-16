@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class LoginComponent {
   testelogin(){
     this.userlogin.getLogin(this.info).subscribe((res)=>{
       console.log(res)
-      localStorage.setItem('id:',res.id)
+      localStorage.setItem('id',res.id)
     }
   )}
 }
