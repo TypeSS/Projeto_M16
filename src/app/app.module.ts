@@ -17,7 +17,12 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { SpecialsComponent } from './pages/specials/specials.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ChefsComponent } from './pages/chefs/chefs.component';
+import { Toast, ToastModule } from 'primeng/toast';
 import { MainpageComponent } from './pages/mainpage/mainpage.component';
+import { MessageService } from 'primeng/api';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
+
 
 @NgModule({
   declarations: [
@@ -41,9 +46,12 @@ import { MainpageComponent } from './pages/mainpage/mainpage.component';
     SliderModule,
     PasswordModule,
     CheckboxModule,
-    FormsModule
+    FormsModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    ButtonModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
