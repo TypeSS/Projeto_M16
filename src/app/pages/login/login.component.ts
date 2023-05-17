@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
@@ -7,13 +8,24 @@ import { LoginService } from 'src/app/services/login/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  info: object = {"email": "jonhenrilu@gmail.com", "password":"123"};
+  email: string = "";
+  password: string = "";
 
-  constructor(private userlogin : LoginService){}
+
+  info: object = {"email": this.email, "password":this.password };
+
+  constructor(private userlogin : LoginService, private router:Router){}
   testelogin(){
+
+    this.info = {"email": this.email, "password":this.password };
+    console.log(this.info);
     this.userlogin.getLogin(this.info).subscribe((res)=>{
       console.log(res)
+
+      if (res.message = "Login realizado com sucesso"){
       localStorage.setItem('id',res.id)
+      this.router.navigateByUrl('/home')
+      }
     }
   )}
 }

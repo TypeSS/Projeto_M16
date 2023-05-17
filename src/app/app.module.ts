@@ -3,11 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { InputTextModule } from 'primeng/inputtext';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SliderModule } from 'primeng/slider';
+import { PasswordModule } from 'primeng/password';
+import { Checkbox, CheckboxModule } from 'primeng/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ItemComponent } from './components/item/item.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
+import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './pages/about/about.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { SpecialsComponent } from './pages/specials/specials.component';
@@ -33,7 +37,11 @@ import { MainpageComponent } from './pages/mainpage/mainpage.component';
     BrowserModule,
     AppRoutingModule,
     InputTextModule,
-    HttpClientModule
+    HttpClientModule,
+    SliderModule,
+    PasswordModule,
+    CheckboxModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
