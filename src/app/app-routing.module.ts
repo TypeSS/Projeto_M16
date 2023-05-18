@@ -4,11 +4,13 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MainpageComponent } from './pages/mainpage/mainpage.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home',pathMatch:'full'},
   {path:'home', component:MainpageComponent},
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  {path:'register', component:RegisterComponent}
 ];
 
 const routerOptions: ExtraOptions = {

@@ -12,25 +12,25 @@
                 <span class="p-inputgroup-addon">
                     <i class="pi pi-user"></i>
                 </span>
-                <input #Email pInputText [(ngModel)]="email"  [ngModelOptions]="{standalone: true}" placeholder="Email" class="text-yellow-200" [ngClass]="{'ng-dirty ng-invalid': verif}" />
+                <input #Email pInputText [(ngModel)]="email"  [ngModelOptions]="{standalone: true}" placeholder="Email" class="text-white" [ngClass]="{'ng-dirty ng-invalid': verif}" />
             </div>
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon">
                   <i class="pi pi-lock"></i>
               </span>
-              <input #Password type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"  pInputText placeholder="Password" class="text-yellow-200" [ngClass]="{'ng-dirty ng-invalid': verif}"/>
+              <input #Password type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"  pInputText placeholder="Password" class="text-white" [ngClass]="{'ng-dirty ng-invalid': verif}"/>
           </div>
                 <div class="flex items-center justify-between">
                     <div class="flex items-start">
                         <div class="flex items-center h-5">
-                          <p-checkbox name="groupname" value="val1" class="text-yellow-500" label="Remember me"></p-checkbox>
+                          <p-checkbox name="groupname" value="val1" class="text-yellow-500" label="Lembrar-me"></p-checkbox>
                         </div>
                     </div>
-                    <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
+                    <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Esqueceste-te da tua senha?</a>
                 </div>
                 <button type="button" pButton pRipple (click)="testelogin()" label="Entrar" class="w-full"></button>
-                <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-                    Don’t have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+                <p class="text-sm font-light text-white">
+                    Não tens conta? <a [routerLink]="['/register']" class="font-medium text-primary-600 hover:underline text-yellow-500">Cria uma</a>
                 </p>
                 <p-toast position="bottom-right" class=""></p-toast>
             </form>
