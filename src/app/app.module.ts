@@ -24,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { RegisterComponent } from './pages/register/register.component';
 import { StepsModule } from 'primeng/steps';
+import { OrderbookComponent } from './pages/orderbook/orderbook.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import { StepsModule } from 'primeng/steps';
     ChefsComponent,
     MainpageComponent,
     RegisterComponent,
+    OrderbookComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { StepsModule } from 'primeng/steps';
     ToastModule,
     BrowserAnimationsModule,
     ButtonModule,
-    StepsModule
+    StepsModule,
+    InputTextareaModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
