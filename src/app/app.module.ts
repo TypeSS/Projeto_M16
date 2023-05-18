@@ -22,6 +22,8 @@ import { MainpageComponent } from './pages/mainpage/mainpage.component';
 import { MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
+import { OrderbookComponent } from './pages/orderbook/orderbook.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { ButtonModule } from 'primeng/button';
     LoginComponent,
     ChefsComponent,
     MainpageComponent,
+    OrderbookComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { ButtonModule } from 'primeng/button';
     FormsModule,
     ToastModule,
     BrowserAnimationsModule,
-    ButtonModule
+    ButtonModule,
+    InputTextareaModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
