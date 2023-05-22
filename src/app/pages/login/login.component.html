@@ -2,7 +2,7 @@
 <div class="bg-loginPage bg-no-repeat bg-cover w-full h-screen flex justify-center blurry-bg absolute">
 <div class="bg-black bg-opacity-40 absolute w-full h-full"></div>
 <div class="flex flex-column justify-center items-center">
-    <div class="w-full rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 bg-neutral-800		  absolute">
+    <div class="w-full rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 bg-[#1A1814]	  absolute">
         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl text-yellow-500">
                 Entra na tua conta
@@ -12,13 +12,13 @@
                 <span class="p-inputgroup-addon">
                     <i class="pi pi-user"></i>
                 </span>
-                <input #Email pInputText [(ngModel)]="email"  [ngModelOptions]="{standalone: true}" placeholder="Email" class="text-white" [ngClass]="{'ng-dirty ng-invalid': verif}" />
+                <input #Email pInputText [(ngModel)]="email"  [ngModelOptions]="{standalone: true}" placeholder="Email" class="text-white bg-[#0C0B09]" [ngClass]="{'ng-dirty ng-invalid': verif}" />
             </div>
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon">
                   <i class="pi pi-lock"></i>
               </span>
-              <input #Password type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"  pInputText placeholder="Password" class="text-white" [ngClass]="{'ng-dirty ng-invalid': verif}"/>
+              <input #Password type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"  pInputText placeholder="Password" class="text-white bg-[#0C0B09]" [ngClass]="{'ng-dirty ng-invalid': verif}"/>
           </div>
                 <div class="flex items-center justify-between">
                     <div class="flex items-start">
