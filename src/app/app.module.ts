@@ -27,6 +27,8 @@ import { StepsModule } from 'primeng/steps';
 import { OrderbookComponent } from './pages/orderbook/orderbook.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { AdminComponent } from './pages/admin/admin.component';
+import { TableModule } from 'primeng/table';
+
 
 
 @NgModule({
@@ -59,7 +61,8 @@ import { AdminComponent } from './pages/admin/admin.component';
     BrowserAnimationsModule,
     ButtonModule,
     StepsModule,
-    InputTextareaModule
+    InputTextareaModule,
+    TableModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
