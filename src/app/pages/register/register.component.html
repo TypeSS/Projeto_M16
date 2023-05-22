@@ -1,18 +1,60 @@
 <div class="relative w-full">
-  <div class="bg-loginPage bg-no-repeat bg-cover w-full h-screen flex justify-center blurry-bg absolute">
+  <div class="bg-loginPage bg-no-repeat bg-center bg-cover w-full h-screen flex justify-center blurry-bg absolute">
   <div class="bg-black bg-opacity-40 absolute w-full h-full"></div>
   <div class="flex flex-column justify-center items-center">
-      <div class="w-full rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 bg-neutral-800		  absolute">
+      <div class="w-full rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 bg-neutral-800 absolute">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl text-yellow-500">
                   Cria a tua conta
               </h1>
-              <form class="space-y-4 md:space-y-6" action="#">
-                <p-steps [model]="steps" ></p-steps>
-                <div></div>
-                  <button type="button" pButton pRipple  label="Criar" class="w-full"></button>
-                  <p class="text-sm font-light text-white">
-                      Já tens uma conta? <a [routerLink]="['/login']" class="font-medium text-primary-600 hover:underline text-yellow-500">Entra</a>
+              <form class="space-y-4 md:space-y-6 flex flex-row flex-wrap justify-between" action="#">
+                  <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon">
+                        <i class="pi pi-user"></i>
+                    </span>
+                    <input #Nome pInputText [(ngModel)]="nome"  [ngModelOptions]="{standalone: true}" placeholder="Nome Completo" class="text-yellow-200" />
+                </div>
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon">
+                      <i class="pi pi-phone"></i>
+                  </span>
+                  <input #Telefone [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}"  pInputText placeholder="Telefone" class="text-yellow-200"/>
+              </div>
+
+              <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-at"></i>
+                </span>
+                <input #Email pInputText [(ngModel)]="email"  [ngModelOptions]="{standalone: true}" placeholder="Email" class="text-yellow-200" />
+            </div>
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon">
+                  <i class="pi pi-home"></i>
+              </span>
+              <input #Morada [(ngModel)]="morada" [ngModelOptions]="{standalone: true}"  pInputText placeholder="Morada" class="text-yellow-200"/>
+          </div>
+
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon">
+                <i class="pi pi-user"></i>
+            </span>
+            <input #codPostal pInputText [(ngModel)]="codPostal"  [ngModelOptions]="{standalone: true}"  placeholder="Código Postal" class="text-yellow-200" />
+        </div>
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">
+              <i class="pi pi-lock"></i>
+          </span>
+          <input #Password type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"  pInputText placeholder="Password" class="text-yellow-200"/>
+      </div>
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-lock"></i>
+        </span>
+        <input #ConfimarPass type="password" [(ngModel)]="cPass" [ngModelOptions]="{standalone: true}"  pInputText placeholder="Confirmar Password" class="text-yellow-200"/>
+    </div>
+                  <button type="button" pButton pRipple (click)="regUser()"  label="Criar" class="w-full"></button>
+                  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                      Já tens uma conta? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500" [routerLink]="['/login']">Entra</a>
                   </p>
                   <p-toast position="bottom-right" class=""></p-toast>
               </form>

@@ -1,5 +1,5 @@
 <div class="relative w-full">
-<div class="bg-loginPage bg-no-repeat bg-cover w-full h-screen flex justify-center blurry-bg absolute">
+<div class="bg-loginPage bg-no-repeat bg-center bg-cover w-full h-screen flex justify-center blurry-bg absolute">
 <div class="bg-black bg-opacity-40 absolute w-full h-full"></div>
 <div class="flex flex-column justify-center items-center">
     <div class="w-full rounded-lg shadow  md:mt-0 sm:max-w-md xl:p-0 bg-[#1A1814] absolute">
@@ -10,7 +10,7 @@
             <form class="space-y-4 md:space-y-6" action="#">
               <div class="p-inputgroup">
                 <span class="p-inputgroup-addon">
-                    <i class="pi pi-user"></i>
+                    <i class="pi pi-at"></i>
                 </span>
                 <input #Email pInputText [(ngModel)]="email"  [ngModelOptions]="{standalone: true}" placeholder="Email" class="text-white bg-[#0C0B09]" [ngClass]="{'ng-dirty ng-invalid': verif}" />
             </div>
