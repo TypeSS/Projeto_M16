@@ -26,6 +26,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { StepsModule } from 'primeng/steps';
 import { OrderbookComponent } from './pages/orderbook/orderbook.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { AdminComponent } from './pages/admin/admin.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     ChefsComponent,
     MainpageComponent,
     RegisterComponent,
-    OrderbookComponent
+    OrderbookComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
