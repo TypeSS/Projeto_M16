@@ -28,6 +28,7 @@ import { OrderbookComponent } from './pages/orderbook/orderbook.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { AdminComponent } from './pages/admin/admin.component';
 import { TableModule } from 'primeng/table';
+import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 
 
 
@@ -62,7 +63,9 @@ import { TableModule } from 'primeng/table';
     ButtonModule,
     StepsModule,
     InputTextareaModule,
-    TableModule
+    TableModule,
+    DataViewModule,
+    
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

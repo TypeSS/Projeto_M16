@@ -72,40 +72,91 @@
   </div>
 
 </aside>
-<div class="flex justify-center items-center w-1/2">
-    
-    <p-table [tableStyle]="{'min-width': '60rem'}">
-    <ng-template pTemplate="caption">
-        <div class="flex align-items-center justify-content-between">
-            Products
-        </div>
-    </ng-template>
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Name</th>
-            <th>Image</th>
-            <th>Price</th>
-            <th>Category</th>
-            <th>Reviews</th>
-            <th>Status</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-product>
-        <tr>
-            <td>{{product.name}}</td>
-            <td>class="shadow-4" /></td>
-            <td>{{product.price | currency:'USD'}}</td>
-            <td>{{product.category}}</td>
-            <td></td>
-            <td></td>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="summary">
-        <div class="flex align-items-center justify-content-between">
-            In total there are  products.
-        </div>
-    </ng-template>
+<div class="flex flex-col justify-around  items-center w-1/2">
+
+<p-table [tableStyle]="{'min-width': '60rem'}" [value]="clientInfo">
+  <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+          Products
+      </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Morada</th>
+          <th>Código Postal</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-clientInfo>
+      <tr>
+          <td>{{clientInfo.nome}}</td>
+          <td>{{clientInfo.telefone}}</td>
+          <td>{{clientInfo.email}}</td>
+          <td>{{clientInfo.password}}</td>
+          <td>{{clientInfo.morada}}</td>
+          <td>{{clientInfo.codPostal}}</td>
+      </tr>
+  </ng-template>
 </p-table>
+
+<p-table [value]="prodinfo" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Categoria</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-prodinfo let-editing="editing">
+      <tr>
+          <td [pEditableColumn]="prodinfo.nomeproduto" pEditableColumnField="code">
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="prodinfo.nomeproduto" />
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      {{ prodinfo.nomeproduto }}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+          <td [pEditableColumn]="prodinfo.descricao" pEditableColumnField="name">
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="prodinfo.descricao" required />
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      {{ prodinfo.descricao }}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+          <td [pEditableColumn]="prodinfo.preco" pEditableColumnField="inventoryStatus">
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText [(ngModel)]="prodinfo.preco" />
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      {{ prodinfo.preco | currency: 'USD'  }}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+          <td [pEditableColumn]="prodinfo.categoria" pEditableColumnField="price">
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="prodinfo.categoria" />
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      {{ prodinfo.categoria}}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+      </tr>
+  </ng-template>
+</p-table>
+
 </div>
 
 </div>
