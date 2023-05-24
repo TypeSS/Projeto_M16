@@ -74,11 +74,14 @@
                   </li>
                 </ul>
               </div>
-              <div [ngClass]="{'border-yellow-500':verif, 'border-white':!verif}" class=" border-2 w-8 h-8  rounded-full flex justify-center" >
+              <div class="">
+                <div [ngClass]="{'border-yellow-500':verif, 'border-white':!verif}" class=" border-2 w-8 h-8  rounded-full flex justify-center " >
                 <a [ngClass]="{'text-yellow-500':verif, 'text-white':!verif}" class="pi pi-user text-xl" (click)="menu.toggle($event)"></a>
-                <p-menu #menu [model]="items" [popup]="true"></p-menu>
+                <p-menu #menu [model]="items" [popup]="true" class="!top-14 flex"></p-menu>              
               </div>
             </div>
+              </div>
+              
           </nav>
 
 
