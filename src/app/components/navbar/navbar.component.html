@@ -75,9 +75,10 @@
                 </ul>
               </div>
               <div [ngClass]="{'border-yellow-500':verif, 'border-white':!verif}" class=" border-2 w-8 h-8  rounded-full flex justify-center" >
-                <a [ngClass]="{'text-yellow-500':verif, 'text-white':!verif}" class="pi pi-user text-xl" [routerLink]="['/login']"></a>
+                <a [ngClass]="{'text-yellow-500':verif, 'text-white':!verif}" class="pi pi-user text-xl" (click)="menu.toggle($event)"></a>
+                <p-menu #menu [model]="items" [popup]="true"></p-menu>
               </div>
-              </div>
+            </div>
           </nav>
 
 

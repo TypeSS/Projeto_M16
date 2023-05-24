@@ -29,6 +29,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { AdminComponent } from './pages/admin/admin.component';
 import { TableModule } from 'primeng/table';
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
+import { MenuModule } from 'primeng/menu';
 
 
 
@@ -65,7 +66,7 @@ import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
     InputTextareaModule,
     TableModule,
     DataViewModule,
-    
+    MenuModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
