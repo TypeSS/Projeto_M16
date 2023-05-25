@@ -1,88 +1,91 @@
-<!--<nav class=" bg-[#0c0b09cc]	">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 P-[15px]">
-      <div class="flex items-center h-16 justify-evenly">
-        <div class="flex items-center ">
-          <div class="flex-shrink-0">
-            <h2 class="tracking-wide text-white uppercase">Menu do Chefe</h2>
-          </div>
-          <div class="hidden md:flex ">
-            <div class="flex items-baseline ml-10">
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-[#CDA45E]">HOME</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-[#CDA45E]">MENU</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-[#CDA45E]">ABOUT</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-[#CDA45E]">ESPECIAIS</a>
-              <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-[#CDA45E]">CONTACT</a>
-
-              <button class="bg-transparent hover:bg-[#CCA35D] text-white border-2 border-[#CCA35D] rounded-full px-6 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out md:mr-4">Book a table</button>
-
-            </div>
-          </div>
-        </div>
-        <div class="flex -mr-2 md:hidden">
-          <button type="button" class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-
-            <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-
-          </button>-->
-
-          <nav class="px-2 sm:px-4 py-2.5 w-screen flex justify-center  bg-[#0c0b09cc]">
-                <!-- Hamburguer Button -->
-                <button type="button"
-                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg none md:hidden hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-600 ">
-                  <span class="sr-only">Open main menu</span>
-                  <svg class="w-6 h-6 text-white" fill="currentColor" aria-hidden="true" viewBox="0 0 20 20"
-                       xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                          clip-rule="evenodd"></path>
-                  </svg>
-                </button>
-              <!-- Menu -->
-              <div  class="flex flex-row items-center justify-between w-full px-16 md:flex md:order-1 md:ml-auto"
-                   id="mobile-menu-select">
-                   <div>
-                    <span class="text-yellow-500">M<span class="text-white">ENU </span><span class="text-white">DO </span><span class="text-yellow-500">C</span><span class="text-white">HEFE</span></span>
-                   </div>
-                   <div>
-
-                <ul
-                  class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:border-transparent bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-
-                  <li>
-                    <a [routerLink]="'/home'" [routerLinkActiveOptions]="linkActiveOptions" routerLinkActive="text-yellow-500"
-                       class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth">
-                    HOME
-                    </a>
-                  </li>
-                  <li>
-                    <a [routerLink]="'/home'" [routerLinkActiveOptions]="linkActiveOptions" routerLinkActive="text-yellow-500 " fragment="menu"
-                       class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth ">
-                     MENU</a>
-                  </li>
-                  <li>
-                    <a [routerLink]="'/home'" [routerLinkActiveOptions]="linkActiveOptions" routerLinkActive="text-yellow-500" fragment="about"
-                       class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500" (click)="logOut()">
-                     ALGO</a>
-                  </li>
-                  <li>
-                    <a [routerLink]="'/home'" routerLinkActive="text-yellow-500" fragment="contact"  [routerLinkActiveOptions]="linkActiveOptions"
-                       class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500">
-                      CONTACTO</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="">
-                <div [ngClass]="{'border-yellow-500':verif, 'border-white':!verif}" class=" border-2 w-8 h-8  rounded-full flex justify-center " >
-                <a [ngClass]="{'text-yellow-500':verif, 'text-white':!verif}" class="pi pi-user text-xl" (click)="menu.toggle($event)"></a>
-                <p-menu #menu [model]="items" [popup]="true" class="!top-14 flex"></p-menu>              
-              </div>
-            </div>
-              </div>
-              
-          </nav>
-
-
-
+<nav class="px-2 sm:px-4 py-2.5 w-screen flex justify-center bg-[#0c0b09cc]">
+  <!-- Hamburguer Button -->
+  <button
+    type="button"
+    class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg none md:hidden hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-600"
+  >
+    <span class="sr-only">Open main menu</span>
+    <svg
+      class="w-6 h-6 text-white"
+      fill="currentColor"
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </button>
+  <!-- Menu -->
+  <div
+    class="flex flex-row items-center justify-between w-full px-16 md:flex md:order-1 md:ml-auto"
+    id="mobile-menu-select"
+  >
+    <div>
+      <span class="text-yellow-500"
+        >M<span class="text-white">ENU </span><span class="text-white">DO </span
+        ><span class="text-yellow-500">C</span
+        ><span class="text-white">HEFE</span></span
+      >
+    </div>
+    <div>
+      <ul
+        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:border-transparent bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+      >
+        <li>
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            HOME
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500 "
+            fragment="menu"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            MENU</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500"
+            fragment="about"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500"
+            (click)="logOut()"
+          >
+            ALGO</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            routerLinkActive="text-yellow-500"
+            fragment="contact"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-gray-500 hover:bg-opacity-40 hover:text-yellow-500"
+          >
+            CONTACTO</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="">
+      <div [ngClass]="{'border-yellow-500':verif, 'border-white':!verif}" class=" border-2 w-8 h-8  rounded-full flex justify-center " >
+      <a [ngClass]="{'text-yellow-500':verif, 'text-white':!verif}" class="pi pi-user text-xl" ></a>
+      </div>
+  </div>
+    
+  </div>
+</nav>

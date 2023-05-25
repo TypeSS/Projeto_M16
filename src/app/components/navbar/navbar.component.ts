@@ -18,6 +18,7 @@ export interface IsActiveMatchOptions {
 
 
 export class NavbarComponent implements OnInit {
+  
   public linkActiveOptions: IsActiveMatchOptions = {
     matrixParams: 'exact',
     queryParams: 'exact',
