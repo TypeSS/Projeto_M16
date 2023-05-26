@@ -30,6 +30,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { TableModule } from 'primeng/table';
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { MenuModule } from 'primeng/menu';
+import { SliderComponent } from './pages/slider/slider.component';
 
 
 
@@ -48,7 +49,8 @@ import { MenuModule } from 'primeng/menu';
     MainpageComponent,
     RegisterComponent,
     OrderbookComponent,
-    AdminComponent
+    AdminComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
