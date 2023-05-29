@@ -31,6 +31,8 @@ import { TableModule } from 'primeng/table';
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { MenuModule } from 'primeng/menu';
 import { SliderComponent } from './pages/slider/slider.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 
 
@@ -50,7 +52,7 @@ import { SliderComponent } from './pages/slider/slider.component';
     RegisterComponent,
     OrderbookComponent,
     AdminComponent,
-    SliderComponent
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import { SliderComponent } from './pages/slider/slider.component';
     InputTextareaModule,
     TableModule,
     DataViewModule,
-    MenuModule
+    MenuModule,
+    MatSidenavModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
