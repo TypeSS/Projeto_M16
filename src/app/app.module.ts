@@ -31,6 +31,10 @@ import { TableModule } from 'primeng/table';
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { MenuModule } from 'primeng/menu';
 import { SliderComponent } from './pages/slider/slider.component';
+import { CalendarModule } from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
+import { ListboxModule } from 'primeng/listbox';
+
 
 
 
@@ -68,7 +72,10 @@ import { SliderComponent } from './pages/slider/slider.component';
     InputTextareaModule,
     TableModule,
     DataViewModule,
-    MenuModule
+    MenuModule,
+    CalendarModule,
+    DropdownModule,
+    ListboxModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
