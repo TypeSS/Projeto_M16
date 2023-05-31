@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Produtos } from 'src/app/models/produtos/produtos';
 import { ProdutosService } from 'src/app/services/produtos/produtos.service';
 
@@ -7,17 +7,10 @@ import { ProdutosService } from 'src/app/services/produtos/produtos.service';
   templateUrl: './produtos.component.html',
   styleUrls: ['./produtos.component.css']
 })
-export class ProdutosComponent implements OnInit {
+export class ProdutosComponent {
 
-
-  produtos: Produtos[];
-
-constructor(private prodinfo: ProdutosService){}
-
-ngOnInit() {
-  this.prodinfo.getProdutos().subscribe((res:Produtos[])=>{
-    this.produtos = res;
-  })
-}
+@Input() titulo:string;
+@Input() preco:number;
+@Input() descricao:string;
 }
 
