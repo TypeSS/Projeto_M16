@@ -54,7 +54,7 @@ import { ListboxModule } from 'primeng/listbox';
     RegisterComponent,
     OrderbookComponent,
     AdminComponent,
-    SliderComponent
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
