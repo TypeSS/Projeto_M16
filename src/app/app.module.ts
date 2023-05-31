@@ -34,6 +34,7 @@ import { SliderComponent } from './pages/slider/slider.component';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { ListboxModule } from 'primeng/listbox';
+import { ProdutosComponent } from './components/produtos/produtos.component';
 
 
 
@@ -55,6 +56,7 @@ import { ListboxModule } from 'primeng/listbox';
     OrderbookComponent,
     AdminComponent,
     SliderComponent,
+    ProdutosComponent,
   ],
   imports: [
     BrowserModule,
