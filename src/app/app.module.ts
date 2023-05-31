@@ -31,7 +31,9 @@ import { TableModule } from 'primeng/table';
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { MenuModule } from 'primeng/menu';
 import { SliderComponent } from './pages/slider/slider.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { CalendarModule } from 'primeng/calendar';
+import { DropdownModule } from 'primeng/dropdown';
+import { ListboxModule } from 'primeng/listbox';
 
 
 
@@ -71,7 +73,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     TableModule,
     DataViewModule,
     MenuModule,
-    MatSidenavModule
+    CalendarModule,
+    DropdownModule,
+    ListboxModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
