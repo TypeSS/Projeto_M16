@@ -4,8 +4,9 @@
     <p class="text-[36px] font-bold text-yellow-500">Check Our Tasty Menu</p>
   </div>
 
-  <div>
-    <p-button  *ngFor="let categoria of categorias"  label="{{categoria.categoria}}" styleClass="p-button-text" (click)="ProdutosCat(categoria.id_categoria)"></p-button>
+  <div class="border-2 rounded border-yellow-500">
+    <p-button label="Todos" styleClass="p-button-text" (click)="Produtos()"></p-button>
+    <p-button #sorter *ngFor="let categoria of categorias"  label="{{categoria.categoria}}" styleClass="p-button-text {{classe}}" (click)="ProdutosCat(categoria.id_categoria)"></p-button>
   </div>
   <div class=" w-5/6 flex items-center flex-col md:flex-row flex-wrap justify-around  gap-12">
     <app-produtos *ngFor="let produto of produtos" [titulo]="produto.nomeproduto" [descricao]="produto.descricao" [preco]="produto.preco"></app-produtos>

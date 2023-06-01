@@ -11,18 +11,21 @@ import { RestauranteService } from 'src/app/services/restaurante/restaurante.ser
 })
 export class MenuComponent implements OnInit {
 
+  @ViewChild('sorter')
+  sorter:HTMLElement;
 
   produtos: Produtos[];
   categorias: Categoria[];
+
+  classe: string;
 
   constructor(private prodinfo: ProdutosService, private infocategorias: RestauranteService){}
 
 
 
   ngOnInit() {
-    this.prodinfo.getProdutos().subscribe((res)=>{
-      this.produtos = res;
-    })
+
+    this.Produtos();
 
     this.infocategorias.getCategoria().subscribe((res)=>{
       this.categorias = res;
@@ -34,6 +37,14 @@ ProdutosCat(id_categoria:number){
   this.prodinfo.getProdutospCategoria(id_categoria).subscribe((res)=>{
     this.produtos = res
     console.log(this.produtos)
+  })
+
+  this.classe = "bg-yellow-500"
+}
+
+Produtos(){
+  this.prodinfo.getProdutos().subscribe((res)=>{
+    this.produtos = res;
   })
 }
 }
