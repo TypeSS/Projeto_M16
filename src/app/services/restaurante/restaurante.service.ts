@@ -19,4 +19,6 @@ export class RestauranteService {
   getCategoria():Observable<Categoria[]>{
     return this.http.get<Categoria[]>(this.urlService.getUrl("categorias"));
   }
+
+
 }

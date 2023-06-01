@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UrlService } from '../url/url.service';
 import { Observable } from 'rxjs';
@@ -13,5 +13,9 @@ export class ProdutosService {
 
   getProdutos():Observable<Produtos[]>{
     return this.http.get<Produtos[]>(this.urlService.getUrl("produto"));
+  }
+
+  getProdutospCategoria(id:number):Observable<Produtos[]>{
+    return this.http.get<Produtos[]>(this.urlService.getUrl("produtocategoria/"+id))
   }
 }

@@ -5,7 +5,7 @@
   </div>
 
   <div>
-    <p-button *ngFor="let categoria of categorias" label="{{categoria.categoria}}" styleClass="p-button-text"></p-button>
+    <p-button  *ngFor="let categoria of categorias"  label="{{categoria.categoria}}" styleClass="p-button-text" (click)="ProdutosCat(categoria.id_categoria)"></p-button>
   </div>
   <div class=" w-5/6 flex items-center flex-col md:flex-row flex-wrap justify-around  gap-12">
     <app-produtos *ngFor="let produto of produtos" [titulo]="produto.nomeproduto" [descricao]="produto.descricao" [preco]="produto.preco"></app-produtos>
