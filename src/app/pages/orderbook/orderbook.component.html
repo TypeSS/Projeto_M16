@@ -4,18 +4,17 @@
             <p class="text-[36px] font-bold text-yellow-500 ">Reservar Mesa</p>
           </div>
 
-      <form>
         <div class=" flex justify-center items-center flex-col ">
-            <div class="flex p-2 justify-between ">
-            <p-calendar [showIcon]="true" [(ngModel)]="data" class="m-1 bg-[#1A1814]" dateFormat="yy/mm/dd" placeholder="yy/mm/dd"	 [ngModelOptions]="{standalone: true}"  />
-            <p-calendar [showIcon]="true" [(ngModel)]="hora" class="m-1 bg-[#1A1814]" [timeOnly]="true" placeholder="--:--" [ngModelOptions]="{standalone: true}"  />
-            <input pInputText type="text" class="m-1 bg-[#1A1814]" placeholder="Nº de Pessoas"  />
-            <p-dropdown [options]="listarest" [(ngModel)]="selectedRes" [ngModelOptions]="{standalone: true}" optionLabel="nome_restaurante"></p-dropdown>
+            <div class="flex p-2 justify-between  ">
+            <p-calendar [showIcon]="true" [(ngModel)]="data" class="m-1 bg-[#1A1814"  dateFormat="yy/mm/dd" placeholder="yy/mm/dd"	 [ngModelOptions]="{standalone: true}"  />
+            <p-calendar [showIcon]="true" [(ngModel)]="hora" class="m-1 bg-[#1A1814"  [timeOnly]="true" placeholder="--:--" [ngModelOptions]="{standalone: true}"  />
+            <input pInputText type="text" class="m-1 w-16 bg-[#1A1814]" placeholder="Nº de Pessoas"  />
+            <p-dropdown [options]="listarest" class="m-1 bg-[#1A1814]" styleClass="bg-[#1A1814]" [(ngModel)]="selectedRes" [ngModelOptions]="{standalone: true}" optionLabel="nome_restaurante"></p-dropdown>
             </div>
         <div class="">
-            <textarea placeholder="Observações" pKeyFilter="int" class="bg-[#1A1814]" rows="5" cols="100" pInputTextarea></textarea>
+            <textarea placeholder="Observações" pKeyFilter="int" class="bg-[#1A1814] sm:m-1 w-full" rows="5" cols="100" pInputTextarea></textarea>
         </div>
         <p-button
         label="Reservar Mesa"
-        styleClass="p-button-rounded  font-bold bg-transparent text-white hover:bg-[#CDA45E]  border-[#CDA45E]" class="m-4" (click)="Reservas()"></p-button>
+        styleClass="p-button-rounded  font-bold bg-transparent text-white hover:bg-[#CDA45E]  border-[#CDA45E]" class="m-5" (click)="Reservas()"></p-button>
     </div>

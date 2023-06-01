@@ -1,31 +1,28 @@
-<div
-  class="flex items-center justify-center"
->
+<div class="flex items-center justify-center hover:scale-105 transition-all duration-500 transform">
   <div
-    class="w-[300px] h-[400px] mx-auto bg-[#0C0B09] rounded-3xl shadow-xl overflow-hidden"
+    class="w-[280px] h-[350px]  bg-[#0C0B09] rounded-3xl shadow-xl overflow-hidden"
   >
-    <div class="max-w-md mx-auto">
-      <div
-        class="h-[15rem]"
-        style="
-          background-image: url(https://img.freepik.com/free-photo/pasta-spaghetti-with-shrimps-sauce_1220-5072.jpg?w=2000&t=st=1678041911~exp=1678042511~hmac=e4aa55e70f8c231d4d23832a611004f86eeb3b6ca067b3fa0c374ac78fe7aba6);
-          background-size: cover;
-          background-position: center;
-        "
-      ></div>
-      <div class="p-4 sm:p-6">
-        <p class="font-bold text-yellow-500 text-[22px] leading-7 mb-1">
-            {{titulo}}
-        </p>
-        <div class="flex flex-row">
-          <p class="text-[17px] font-bold text-yellow-500">{{preco | currency:'EUR' }}</p>
-        </div>
-        <p class="text-yellow-500 font-[15px] mt-6">
-          {{descricao}}
-        </p>
+    <div class="max-w-md mx-auto bg-center">
+      <div class="h-48 flex justify-center items-center" 
+      style="background-image: url(../../../assets/FrontPageimg.jpg);
+      background-size: cover;
+      background-position: center;
+    "></div>
 
+      <div class="p-4 sm:p-6">
+        <p class="font-bold text-yellow-500 text-[18px] leading-7 mb-1">
+          {{ titulo }}
+        </p>
+        <div class="flex flex-col  justify-center">
+          <p class="text-[12px] font-bold text-yellow-500">
+            {{ preco | currency : "EUR" }}
+          </p>
+          <p class="text-yellow-500 font-[15px] ">
+            {{ descricao }}
+          </p>
+        </div>
+       
       </div>
     </div>
   </div>
 </div>
-
