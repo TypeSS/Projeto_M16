@@ -4,29 +4,8 @@
     <p class="text-[36px] font-bold text-yellow-500">Check Our Tasty Menu</p>
   </div>
 
-  <div class="flex items-center justify-center my-8">
-    <ul id="menu-flters" class="flex space-x-4">
-      <li
-        class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-[#0C0B09] hover:bg-opacity-80 hover:text-yellow-500"
-      >
-        All
-      </li>
-      <li
-        class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-[#0C0B09] hover:bg-opacity-80 hover:text-yellow-500"
-      >
-        Starters
-      </li>
-      <li
-        class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-[#0C0B09] hover:bg-opacity-80 hover:text-yellow-500"
-      >
-        Salads
-      </li>
-      <li
-        class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-[#0C0B09] hover:bg-opacity-80 hover:text-yellow-500"
-      >
-        Specialty
-      </li>
-    </ul>
+  <div>
+    <p-button *ngFor="let categoria of categorias" label="{{categoria.categoria}}" styleClass="p-button-text"></p-button>
   </div>
   <div class=" w-5/6 flex items-center flex-col md:flex-row flex-wrap justify-around  gap-12">
     <app-produtos *ngFor="let produto of produtos" [titulo]="produto.nomeproduto" [descricao]="produto.descricao" [preco]="produto.preco"></app-produtos>

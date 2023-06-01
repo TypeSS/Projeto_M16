@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Produtos } from 'src/app/models/produtos/produtos';
+import { Categoria } from 'src/app/models/Restaurante/restaurante';
 import { ProdutosService } from 'src/app/services/produtos/produtos.service';
+import { RestauranteService } from 'src/app/services/restaurante/restaurante.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,14 +11,22 @@ import { ProdutosService } from 'src/app/services/produtos/produtos.service';
 })
 export class MenuComponent implements OnInit {
   produtos: Produtos[];
+  categorias: Categoria[];
 
-  constructor(private prodinfo: ProdutosService){}
+  constructor(private prodinfo: ProdutosService, private infocategorias: RestauranteService){}
 
 
 
   ngOnInit() {
-    this.prodinfo.getProdutos().subscribe((res:Produtos[])=>{
+    this.prodinfo.getProdutos().subscribe((res)=>{
       this.produtos = res;
     })
+
+    this.infocategorias.getCategoria().subscribe((res)=>{
+      this.categorias = res;
+    })
+
+
+
 }
 }
