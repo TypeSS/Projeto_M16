@@ -4,8 +4,8 @@
     <p class="text-[36px] font-bold text-yellow-500">Check Our Tasty Menu</p>
   </div>
 
-  <div>
-    <p-button *ngFor="let categoria of categorias" label="{{categoria.categoria}}" styleClass="p-button-text"></p-button>
+  <div class="w-full flex flex-wrap items-center justify-center  ">
+    <p-button *ngFor="let categoria of categorias" label="{{categoria.categoria}}" class="m-3 bg-transparent rounded-lg border  border-[#CDA45E] text-white" styleClass="p-button-text"></p-button>
   </div>
   <div class=" w-5/6 flex items-center flex-col md:flex-row flex-wrap justify-around  gap-12">
     <app-produtos *ngFor="let produto of produtos" [titulo]="produto.nomeproduto" [descricao]="produto.descricao" [preco]="produto.preco"></app-produtos>
