@@ -6,12 +6,26 @@ import { Categoria } from 'src/app/models/Restaurante/restaurante';
 import { ProdutosService } from 'src/app/services/produtos/produtos.service';
 import { RestauranteService } from 'src/app/services/restaurante/restaurante.service';
 
+export interface IsActiveMatchOptions {
+  matrixParams: 'exact'|'subset'|'ignored';
+  queryParams: 'exact'|'subset'|'ignored';
+  paths: 'exact'|'subset';
+  fragment: 'exact'|'ignored';
+}
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+
+  public linkActiveOptions: IsActiveMatchOptions = {
+    matrixParams: 'exact',
+    queryParams: 'exact',
+    paths: 'exact',
+    fragment: 'exact',
+  };
 
   @ViewChildren('sorter')
   sorter: HTMLElement;
