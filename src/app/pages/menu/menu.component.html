@@ -4,14 +4,12 @@
     <p class="text-[36px] font-bold text-yellow-500">Check Our Tasty Menu</p>
   </div>
 
-  <div class="border-2 rounded border-yellow-500 flex items-center">
-    <button [routerLink]="['/home']" fragment="Todos" routerLinkActive="bg-yellow-500 !text-white" [routerLinkActiveOptions]="linkActiveOptions" class="bg-transparent text-yellow-500 w-[20px] h-[20px]" (click)="Produtos()">Todos</button>
+  <div class=" border-yellow-500 flex items-center">
+    <button [routerLink]="['/home']" fragment="Todos" routerLinkActive="bg-yellow-500 !text-white" [routerLinkActiveOptions]="linkActiveOptions" class="bg-transparent text-yellow-500 w-[150px] h-[50px]  rounded-md border-2 border-yellow-300 " (click)="Produtos()">Todos</button>
 
-      <button #sorter class="cursor-pointer inline-block bg-transparent text-yellow-500 p-[10px]" [routerLink]="['/home']" fragment="{{categoria.categoria}}" routerLinkActive="bg-yellow-500 !text-white" [routerLinkActiveOptions]="linkActiveOptions"
-      *ngFor="let categoria of categorias" (click)="ProdutosCat(categoria.id_categoria)">{{categoria.categoria}}</button>
-
-
-      </div>
+    <button #sorter class="cursor-pointer m-4 bg-transparent text-yellow-500 p-[10px] w-[150px] h-[50px]  rounded-md border-2 border-yellow-300 flex-wrap" [routerLink]="['/home']" fragment="{{categoria.categoria}}" routerLinkActive="bg-yellow-500 !text-white" [routerLinkActiveOptions]="linkActiveOptions"
+    *ngFor="let categoria of categorias" (click)="ProdutosCat(categoria.id_categoria)">{{categoria.categoria}}</button>
+  </div>
   <div class=" w-5/6 flex items-center flex-col md:flex-row flex-wrap justify-around  gap-12">
     <app-produtos *ngFor="let produto of produtos" [titulo]="produto.nomeproduto" [descricao]="produto.descricao" [preco]="produto.preco"></app-produtos>
     </div>
