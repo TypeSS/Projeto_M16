@@ -1,9 +1,10 @@
 export interface Reserva {
-  id_utilizador: number;
   id_restaurante: number;
+  id_utilizador: number;
   data:string;
   horas:string;
-  nPessoas: number
+  observacoes:string;
+  nPessoas: number;
 }
 
 export interface Restaurante {

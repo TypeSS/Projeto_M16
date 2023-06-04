@@ -1,6 +1,6 @@
 import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Restaurante } from 'src/app/models/Restaurante/restaurante';
+import { Reserva, Restaurante } from 'src/app/models/Restaurante/restaurante';
 import { RestauranteService } from 'src/app/services/restaurante/restaurante.service';
 
 
@@ -14,8 +14,10 @@ export class OrderbookComponent implements OnInit {
   hora: string;
   resinfo: object;
   listarest: Restaurante[];
+  nPessoas: number;
+  obs: string;
   selectedRes: Restaurante;
-
+  id:string;
   constructor(private restaurantes:RestauranteService){}
 
   ngOnInit(){
@@ -23,8 +25,25 @@ export class OrderbookComponent implements OnInit {
       this.listarest = res;
       console.log(this.listarest);
     })
+
   }
 
 Reservas() {
+
+
+  this.id = localStorage.getItem('id') || "";
+  this.resinfo = {
+    "id_restaurante": Number(this.selectedRes.id_restaurante),
+    "id_utilizador": Number(this.id),
+    "data":this.data,
+    "horas":this.hora,
+    "observacoes":this.obs,
+    "nPessoas":this.nPessoas,
+  }
+
+  console.log(this.resinfo)
+  this.restaurantes.criarRes(this.resinfo).subscribe((res)=>{
+    console.log('sucesso!!!!')
+  })
 }
 }
