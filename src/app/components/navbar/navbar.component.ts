@@ -28,43 +28,21 @@ export class NavbarComponent implements OnInit {
 
   verif: boolean = false;
   items: MenuItem[];
+  logadoOuN: string
 
 constructor (private useraction: UseractionService){}
 
 ngOnInit() {
 this.verif = this.useraction.verifyUser()
 
-if (this.verif == false){
-this.items = [
-  {
-      label: 'Log in',
-      icon: 'pi pi-sign-in',
-      routerLink:'/login',
-  },
-  {
-    label:'Criar Conta',
-    icon: 'pi pi-plus',
-    routerLink:'/register'
-  }
-]
+if (this.verif== true){
+  this.logadoOuN = "clientes"
 }
 else{
-  this.items = [
-    {
-        label: 'Ver perfil',
-        icon: 'pi pi-user',
-    },
-    {
-      label:'Terminar Sessão',
-      icon: 'pi pi-sign-out',
-      command: ()=>{
-        this.useraction.logOut();
-        window.location.reload();
-      }
-    }
-  ]
+  this.logadoOuN = "login"
 }
 }
+
 
 logOut(){
   this.useraction.logOut()
