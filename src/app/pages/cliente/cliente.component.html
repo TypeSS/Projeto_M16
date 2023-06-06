@@ -1,5 +1,5 @@
 <!-- component -->
-<div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
+<div class="flex flex-row min-h-screen bg-#404142 text-gray-800">
     <aside
       class="sidebar w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-[#0C0B09]"
     >
@@ -68,26 +68,6 @@
               href="#"
               class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-[#1A1814] hover:text-yellow-500"
             >
-              <span class="flex items-center justify-center text-lg text-gray-400">
-                <svg
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                </svg>
-              </span>
-              <span class="ml-3">teste</span>
-            </a>
-          </li>
-          <li class="my-px">
-            <a
-              href="#"
-              class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-[#1A1814] hover:text-yellow-500"
-            >
               <span class="flex items-center justify-center text-lg text-red-400">
                 <svg
                   fill="none"
@@ -110,7 +90,7 @@
       </div>
     </aside>
     <main class="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
-        <header class="header bg-white shadow py-4 px-4">
+        <header class="header bg-[#0C0B09] shadow py-4 px-4 border-l-2	border-yellow-500">
           <div class="header-content flex items-center flex-row">
             <form action="#">
               <div class="hidden md:flex relative">
@@ -135,23 +115,18 @@
                 </a>
               </div>
             </form>
-            <div class="flex ml-auto">
+            <div class="flex ml-auto mr-5 self-end">
               <a href class="flex flex-row items-center">
-                <img
-                  src=""
-                  alt
-                  class="h-10 w-10 bg-gray-200 border rounded-full"
-                />
+                <i class="pi pi-user text-white " style="font-size: 1.5rem"></i>
                 <span class="flex flex-col ml-2">
-                  <span class="truncate w-20 font-semibold tracking-wide leading-none">JhonH</span>
-                  <span class="truncate w-20 text-gray-500 text-xs leading-none mt-1">asd</span>
+                  <span class=" truncate font-semibold tracking-wide leading-none text-white">Nome Cliente</span>
                 </span>
               </a>
             </div>
           </div>
         </header>
         <div class="main-content flex flex-col flex-grow p-4">
-          <h1 class="font-bold text-2xl text-black">Dados cliente</h1>
+          <h1 class="font-bold text-2xl text-white">Dados cliente</h1>
 
         </div>
        
@@ -161,3 +136,4 @@
           </div>
         </footer>
     </main>
+</div>
