@@ -1,24 +1,25 @@
 <div class="flex flex-col items-center justify-center py-12 mx-auto bg-[#0C0B09]" >
-    
+
     <div class="flex flex-col self-start m-10">
         <h2 class="text-3xl font-bold text-white">Especiais</h2>
         <p class="text-[36px] font-bold text-yellow-500 ">Veja os nossos Especiais</p>
       </div>
-    
-      <div class="p-10 flex justify-center">
+
+      <div>
+        <button *ngFor="let ocaisao of ocasioes" (click)="getPratoDoDia(ocaisao.id_ocasiao)">{{ocaisao.ocasiao}}</button>
+      </div>
+      <div class="p-10 flex justify-center" *ngFor="let prato of pratosDoDia">
         <!--Card 1-->
         <div class=" w-1/2 rounded-lg  lg:flex">
           <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-lg  text-center overflow-hidden" style="background-image: url('../../../assets/frontRestaurante.jpg')" title="Mountain">
           </div>
           <div class="bg-[#1A1814] rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
             <div class="mb-8">
-          
-              <div class="text-yellow-500 font-bold text-xl mb-2">teste</div>
-              <p class="text-[#CDA45E] text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-            </div>
+
+              <div class="text-yellow-500 font-bold text-xl mb-2"><p>{{prato.nomeproduto}}</p></div>
             <div class="flex items-center">
               <div class="text-sm">
-                <p class="text-yellow-500 leading-none">Dia da semana</p>
+                <p class="text-yellow-500 leading-none">{{prato.ocasiao}}</p>
               </div>
             </div>
           </div>

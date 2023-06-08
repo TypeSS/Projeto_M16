@@ -23,4 +23,5 @@ export class RestauranteService {
   criarRes(resinfo:object):Observable<any>{
     return this.http.post<any>(this.urlService.getUrl("reservas"), resinfo)
   }
+
 }

@@ -14,7 +14,6 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'cliente', component:ClienteComponent}
 
-
 ];
 
 const routerOptions: ExtraOptions = {

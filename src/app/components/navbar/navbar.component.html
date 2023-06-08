@@ -50,6 +50,17 @@
             [routerLink]="'/home'"
             [routerLinkActiveOptions]="linkActiveOptions"
             routerLinkActive="text-yellow-500 "
+            fragment="sobre"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            SOBRE NÓS</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500 "
             fragment="menu"
             class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
           >
@@ -60,23 +71,23 @@
           <a
             [routerLink]="'/home'"
             [routerLinkActiveOptions]="linkActiveOptions"
-            routerLinkActive="text-yellow-500"
-            fragment="about"
-            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500"
-            (click)="logOut()"
+            routerLinkActive="text-yellow-500 "
+            fragment="especiais"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
           >
-            ALGO</a
+            PRATOS DO DIA</a
           >
         </li>
         <li>
-          <a  
+          <a
             [routerLink]="'/home'"
-            routerLinkActive="text-yellow-500"
-            fragment="contact"
             [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500"
+            fragment="reserva"
             class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500"
+            (click)="logOut()"
           >
-            CONTACTO</a
+            RESERVAS</a
           >
         </li>
       </ul>
@@ -86,6 +97,6 @@
       <a [ngClass]="{'text-yellow-500':verif, 'text-white':!verif}" class="pi pi-user text-xl"   [routerLink]='"/"+logadoOuN'></a>
       </div>
   </div>
-    
+
   </div>
 </nav>

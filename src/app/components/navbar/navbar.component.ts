@@ -18,7 +18,7 @@ export interface IsActiveMatchOptions {
 
 
 export class NavbarComponent implements OnInit {
-  
+
   public linkActiveOptions: IsActiveMatchOptions = {
     matrixParams: 'exact',
     queryParams: 'exact',
@@ -36,7 +36,7 @@ ngOnInit() {
 this.verif = this.useraction.verifyUser()
 
 if (this.verif== true){
-  this.logadoOuN = "clientes"
+  this.logadoOuN = "cliente"
 }
 else{
   this.logadoOuN = "login"

@@ -4,3 +4,16 @@ export interface Produtos {
   preco: number;
   categoria: string;
 }
+
+export interface Ocasioes{
+  id_ocasiao:number,
+  ocasiao:string,
+  descricao:string;
+}
+
+export interface PratoDoDia{
+  nomeproduto:string;
+  preco:number;
+  categoria:string;
+  ocasiao: string;
+}

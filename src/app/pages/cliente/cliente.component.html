@@ -1,5 +1,5 @@
 <!-- component -->
-<div class="flex flex-row min-h-screen bg-#404142 text-gray-800">
+<div class="flex flex-row min-h-screen bg-#404142 text-gray-800" *ngIf="userinfo">
     <aside
       class="sidebar w-64 md:shadow transform -translate-x-full md:translate-x-0 transition-transform duration-150 ease-in bg-[#0C0B09]"
     >
@@ -14,9 +14,9 @@
       </div>
       <div class="sidebar-content px-4 py-6">
         <ul class="flex flex-col w-full">
-           
+
           <li class="my-px">
-            <span class="flex font-medium text-sm text-gray-300 px-4 my-4 uppercase">Nome</span>
+            <span class="flex font-medium text-sm text-gray-300 px-4 my-4 uppercase">{{nome}}</span>
           </li>
           <li class="my-px">
             <a
@@ -60,7 +60,7 @@
                 </svg>
               </span>
               <span class="ml-3">teste</span>
-           
+
             </a>
           </li>
           <li class="my-px">
@@ -119,7 +119,7 @@
               <a href class="flex flex-row items-center">
                 <i class="pi pi-user text-white " style="font-size: 1.5rem"></i>
                 <span class="flex flex-col ml-2">
-                  <span class=" truncate font-semibold tracking-wide leading-none text-white">Nome Cliente</span>
+                  <span class="truncate font-semibold tracking-wide leading-none text-white">{{nome}}</span>
                 </span>
               </a>
             </div>
@@ -129,7 +129,7 @@
           <h1 class="font-bold text-2xl text-white">Dados cliente</h1>
 
         </div>
-       
+
         <footer class="footer px-4 py-6">
           <div class="footer-content">
             <p class="text-sm text-gray-600 text-center">jhon o melhor <a href="https://twitter.com/iaminos">by JhonH</a></p>

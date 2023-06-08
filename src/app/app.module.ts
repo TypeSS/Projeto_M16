@@ -26,7 +26,6 @@ import { RegisterComponent } from './pages/register/register.component';
 import { StepsModule } from 'primeng/steps';
 import { OrderbookComponent } from './pages/orderbook/orderbook.component';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { AdminComponent } from './pages/admin/admin.component';
 import { TableModule } from 'primeng/table';
 import { DataViewModule, DataViewLayoutOptions } from 'primeng/dataview';
 import { MenuModule } from 'primeng/menu';
@@ -55,7 +54,6 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
     MainpageComponent,
     RegisterComponent,
     OrderbookComponent,
-    AdminComponent,
     SliderComponent,
     ProdutosComponent,
     ClienteComponent,
