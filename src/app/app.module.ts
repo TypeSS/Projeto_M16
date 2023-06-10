@@ -35,9 +35,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ListboxModule } from 'primeng/listbox';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
-
-
-
+import { OrderComponent } from './pages/encomendas/order.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +55,7 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
     SliderComponent,
     ProdutosComponent,
     ClienteComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,9 +76,9 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
     MenuModule,
     CalendarModule,
     DropdownModule,
-    ListboxModule
+    ListboxModule,
   ],
   providers: [MessageService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
