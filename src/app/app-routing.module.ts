@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MainpageComponent } from './pages/mainpage/mainpage.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { OrderComponent } from './pages/encomendas/order.component';
+import { PedidoComponent } from './pages/pedido/pedido.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'cliente', component: ClienteComponent },
   { path: 'order', component: OrderComponent },
+  { path: 'pedido', component: PedidoComponent },
+
 ];
 
 const routerOptions: ExtraOptions = {

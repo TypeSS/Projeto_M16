@@ -36,6 +36,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { OrderComponent } from './pages/encomendas/order.component';
+import { PedidoComponent } from './pages/pedido/pedido.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { OrderComponent } from './pages/encomendas/order.component';
     ProdutosComponent,
     ClienteComponent,
     OrderComponent,
+    PedidoComponent,
   ],
   imports: [
     BrowserModule,

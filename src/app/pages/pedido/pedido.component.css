@@ -1,0 +1,12 @@
+button.active svg {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+nav ul li {
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li.fade-in {
+  transform: translateY(0);
+}
