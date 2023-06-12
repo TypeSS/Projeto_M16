@@ -8,17 +8,25 @@ import { MainpageComponent } from './pages/mainpage/mainpage.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { OrderComponent } from './pages/encomendas/order.component';
 import { PedidoComponent } from './pages/pedido/pedido.component';
+import { ReservasCComponent } from './pages/reservas-c/reservas-c.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: MainpageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'cliente', component: ClienteComponent },
   { path: 'order', component: OrderComponent },
   { path: 'pedido', component: PedidoComponent },
-
+{path:'cliente', component:ClienteComponent, children:[
+    {path:'perfil', component:PerfilComponent},
+    {path:'reservas', component:ReservasCComponent}
+  ]}
 ];
+  
+
+
+
 
 const routerOptions: ExtraOptions = {
   useHash: false,
