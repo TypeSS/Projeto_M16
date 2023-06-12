@@ -1,0 +1,99 @@
+<p-table
+    #dt1
+    [value]="rescli"
+    dataKey="id"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    [globalFilterFields]="['nome_restaurante','situacao']"
+>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="min-width:15rem">
+                <div class="flex align-items-center">
+                    Nome
+                    <p-columnFilter type="text" field="name" display="menu"></p-columnFilter>
+                </div>
+            </th>
+            <th style="min-width:15rem">
+                <div class="flex align-items-center">
+                  <div class="flex align-items-center">
+                    Restaurante
+                      <p-columnFilter field="nome_restaurante" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                          <ng-template pTemplate="header">
+                              <div class="px-3 pt-3 pb-0">
+                                  <span class="font-bold">Selecionar Restaurante</span>
+                              </div>
+                          </ng-template>
+                          <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                              <p-multiSelect [options]="restaurantes" placeholder="Any" (onChange)="teste($event.value)" optionLabel="nome_restaurante">
+                                  <ng-template let-res pTemplate="item">
+                                      <div class="inline-block vertical-align-middle">
+                                          <span class="ml-1 mt-1">{{ res.nome_restaurante }}</span>
+                                      </div>
+                                  </ng-template>
+                              </p-multiSelect>
+                          </ng-template>
+                      </p-columnFilter>
+                </div>
+                </div>
+            </th>
+            <th style="min-width:15rem">
+                <div class="flex align-items-center">
+                    Data
+                </div>
+            </th>
+            <th style="min-width:10rem">
+                <div class="flex align-items-center">
+                    Hora
+                    <p-columnFilter type="date" field="date" display="menu"></p-columnFilter>
+                </div>
+            </th>
+            <th style="min-width:10rem">
+                <div class="flex align-items-center">
+                    Nº de Pessoas
+                    <p-columnFilter type="numeric" field="balance" display="menu" currency="USD"></p-columnFilter>
+                </div>
+            </th>
+            <th style="min-width:10rem">
+                <div class="flex align-items-center">
+                    Situacao
+                </div>
+            </th>
+            <th style="min-width:10rem">
+                <div class="flex align-items-center">
+                    Observações
+                </div>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-res>
+        <tr>
+            <td>
+                {{ res.nome }}
+            </td>
+            <td>
+               {{res.nome_restaurante}}
+            </td>
+            <td>
+                {{res.data | date: 'dd/mm/yy'}}
+            </td>
+            <td>
+                {{ res.horas }}
+            </td>
+            <td>
+              <p-tag [value]="res.situacao" [severity]="estadoReserva(res.situacao)"></p-tag>
+            </td>
+            <td>
+                {{res.observacoes}}
+            </td>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="7">No customers found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+

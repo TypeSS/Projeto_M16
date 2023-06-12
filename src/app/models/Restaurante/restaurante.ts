@@ -20,4 +20,15 @@ export interface Categoria {
   categoria: string;
 }
 
+export interface ResCli{
+  id_restaurante: any;
+  nome:string;
+  nome_restaurante:string;
+  data:string;
+  horas:string;
+  nPessoas:number;
+  sitaucao:string;
+  observacoes:string;
+}
+
 

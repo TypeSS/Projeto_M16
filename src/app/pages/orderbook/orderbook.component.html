@@ -14,7 +14,11 @@
         <div class="">
             <textarea placeholder="Observações" pKeyFilter="int" class="bg-[#1A1814] sm:m-1 w-full" rows="5" cols="100" pInputTextarea  [(ngModel)]="obs" [ngModelOptions]="{standalone: true}"></textarea>
         </div>
-        <p-button
-        label="Reservar Mesa"
-        styleClass="p-button-rounded  font-bold bg-transparent text-white hover:bg-[#CDA45E]  border-[#CDA45E]" class="m-5" (click)="Reservas()"></p-button>
+        <div class="my-5">
+        <button (click)="Reservas()"
+          class="bg-transparent hover:bg-yellow-500 hover:text-black text-white border-2 border-yellow-500 rounded-full px-6 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out md:mr-4 mt-3 sm:mt-0"
+        >
+          Reservar Mesa
+        </button>
+      </div>
     </div>

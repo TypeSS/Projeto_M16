@@ -36,15 +36,11 @@ ngOnInit() {
 this.verif = this.useraction.verifyUser()
 
 if (this.verif== true){
-  this.logadoOuN = "cliente"
+  this.logadoOuN = "cliente/perfil"
 }
 else{
   this.logadoOuN = "login"
 }
 }
 
-
-logOut(){
-  this.useraction.logOut()
-}
 }

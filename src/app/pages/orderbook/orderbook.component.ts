@@ -29,9 +29,11 @@ export class OrderbookComponent implements OnInit {
   }
 
 Reservas() {
-
-
   this.id = localStorage.getItem('id') || "";
+
+
+
+
   this.resinfo = {
     "id_restaurante": Number(this.selectedRes.id_restaurante),
     "id_utilizador": Number(this.id),
@@ -41,9 +43,10 @@ Reservas() {
     "nPessoas":this.nPessoas,
   }
 
+  
   console.log(this.resinfo)
-  this.restaurantes.criarRes(this.resinfo).subscribe((res)=>{
-    console.log('sucesso!!!!')
-  })
+
+
+  this.restaurantes.criarRes(this.resinfo).subscribe();
 }
 }

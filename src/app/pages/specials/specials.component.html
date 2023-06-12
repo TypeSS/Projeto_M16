@@ -8,6 +8,8 @@
       <div>
         <button *ngFor="let ocaisao of ocasioes" (click)="getPratoDoDia(ocaisao.id_ocasiao)">{{ocaisao.ocasiao}}</button>
       </div>
+
+      <div class="flex flex-row">
       <div class="p-10 flex justify-center" *ngFor="let prato of pratosDoDia">
         <!--Card 1-->
         <div class=" w-1/2 rounded-lg  lg:flex">
@@ -23,4 +25,5 @@
               </div>
             </div>
           </div>
+        </div>
 

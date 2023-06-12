@@ -36,6 +36,12 @@ import { ListboxModule } from 'primeng/listbox';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { OrderComponent } from './pages/encomendas/order.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
+import { ReservasCComponent } from './pages/reservas-c/reservas-c.component';
+import { TagModule } from 'primeng/tag';
+import { MultiSelectModule } from 'primeng/multiselect';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +62,9 @@ import { OrderComponent } from './pages/encomendas/order.component';
     ProdutosComponent,
     ClienteComponent,
     OrderComponent,
+    SidebarComponent,
+    PerfilComponent,
+    ReservasCComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +86,8 @@ import { OrderComponent } from './pages/encomendas/order.component';
     CalendarModule,
     DropdownModule,
     ListboxModule,
+    TagModule,
+    MultiSelectModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],
