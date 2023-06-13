@@ -8,6 +8,13 @@ import { ClientesService } from 'src/app/services/users/clientes.service';
   styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent implements OnInit {
+  cliente = {
+    nome: 'João da Silva',
+    email: 'joao@example.com'
+  };
+
+  editingNome = false;
+  editingEmail = false;
 
   userinfo: Users;
   nome:string;

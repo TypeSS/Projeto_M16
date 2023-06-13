@@ -7,22 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./pedido.component.css'],
 })
 export class PedidoComponent {
-  isMenuOpen = false;
+  verif: boolean = true; // Definindo a propriedade 'verif' como booleana
+  isMenuHidden: boolean = true; // Variável para controlar a exibição do menu
 
-  links = [
-    { label: 'Home', url: '/home' },
-    { label: 'About', url: '/about' },
-    { label: 'Services', url: '/services' },
-    { label: 'Contact', url: '/contact' },
-  ];
+  // Função para alternar a exibição do menu
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  
-    // Adicionar ou remover a classe "fade-in" nos links
-    const navLinks = document.querySelectorAll('.nav-links ul li');
-    navLinks.forEach((link) => {
-      link.classList.toggle('fade-in');
-    });
+    this.isMenuHidden = !this.isMenuHidden;
   }
-  
+
 }

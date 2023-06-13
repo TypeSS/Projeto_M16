@@ -1,75 +1,114 @@
-<nav class="bg-cda45e">
-  <div class="container px-4 mx-auto">
-    <div class="flex items-center justify-between py-4">
-      <div>
-        <span class="text-yellow-500"
-          >M<span class="text-white">ENU </span
-          ><span class="text-white">DO </span
-          ><span class="text-yellow-500">C</span
-          ><span class="text-white">HEFE</span></span
-        >
-      </div>
-      <div class="hidden md:block" [class.hidden]="isMenuOpen" #navLinks>
-        <ul class="hidden space-x-4 transition-all ease-in md:flex">
-          <ng-container *ngFor="let link of links">
-            <li>
-              <a
-                [routerLink]="link.url"
-                class="text-white hover:text-gray-300"
-                >{{ link.label }}</a
-              >
-            </li>
-          </ng-container>
-          <li>
-            <a
-              class="flex items-center text-xl font-semibold text-white"
-              href="#"
-            >
-              <span class="pi pi-shopping-cart"></span>
-              Logo
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <button
-        class="transition ease-in md:hidden focus:outline-none"
-        (click)="toggleMenu()"
-        [class.active]="isMenuOpen"
+<nav class="px-2 sm:px-4 py-2.5 w-screen flex justify-center bg-[#0c0b09cc]">
+  <!-- Hamburguer Button -->
+  <button
+    type="button"
+    class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg none md:hidden hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-600"
+    (click)="toggleMenu()"
+  >
+    <span class="sr-only">Open main menu</span>
+    <svg
+      class="w-6 h-6 text-white"
+      fill="currentColor"
+      aria-hidden="true"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </button>
+  <!-- Menu -->
+  <div
+    class="flex flex-row items-center justify-between w-full px-16 md:flex md:order-1 md:ml-auto"
+    id="mobile-menu-select"
+    *ngIf="isMenuHidden"
+  >
+    <div>
+      <span class="text-yellow-500"
+        >M<span class="text-white">ENU </span><span class="text-white">DO </span
+        ><span class="text-yellow-500">C</span
+        ><span class="text-white">HEFE</span></span
       >
-        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24">
-          <path
-            d="M4 6h16M4 12h16M4 18h16"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
     </div>
-  </div>
-
-  <div class="hidden transition ease-in md:hidden" [class.hidden]="!isMenuOpen">
-    <ul class="px-2 pt-2 pb-4">
-      <ng-container *ngFor="let link of links">
+    <div>
+      <ul
+        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:border-transparent bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:hidden"
+      >
         <li>
-          <a [routerLink]="link.url" class="text-white hover:text-gray-300">{{
-            link.label
-          }}</a>
+          <a
+            [routerLink]="'/home'"
+            routerLinkActive="text-yellow-500"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            HOME
+          </a>
         </li>
-      </ng-container>
-    </ul>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            routerLinkActive="text-yellow-500 "
+            fragment="sobre"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            SOBRE NÓS</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            routerLinkActive="text-yellow-500 "
+            fragment="menu"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            MENU</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            routerLinkActive="text-yellow-500 "
+            fragment="especiais"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            PRATOS DO DIA</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            routerLinkActive="text-yellow-500"
+            fragment="reserva"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500"
+          >
+            RESERVAS</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="">
+      <div [ngClass]="{'border-yellow-500':verif, 'border-white':!verif}" class="flex justify-center w-8 h-8 border-2 rounded-full " >
+      <a [ngClass]="{'text-yellow-500':verif, 'text-white':!verif}" class="text-xl pi pi-user"   [routerLink]='"/"+logadoOuN'></a>
+      </div>
+    </div> -->
   </div>
 </nav>
 
-
 <div class="flex flex-row items-center justify-center gap-3 mt-14">
-  <div class="flex items-center justify-center w-2/6 border border-yellow-500 rounded-lg">
+  <div
+    class="flex items-center justify-center w-2/6 border border-yellow-500 rounded-lg"
+  >
     <!--Card 1-->
     <div class="flex flex-row w-full rounded-lg">
-      <img class="flex flex-col bg-cover rounded-lg lg:w-80" style="background-image: url('../../../assets/FrontPageimg.jpg')" />
-      <div class="bg-[#1A1814] rounded-b lg:rounded-b-none lg:rounded-r pt-16 flex flex-col justify-between leading-normal w-[500px]">
+      <img
+        class="flex flex-col bg-cover rounded-lg lg:w-80"
+        style="background-image: url('../../../assets/FrontPageimg.jpg')"
+      />
+      <div
+        class="bg-[#1A1814] rounded-b lg:rounded-b-none lg:rounded-r pt-16 flex flex-col justify-between leading-normal w-[500px]"
+      >
         <div class="p-5 mb-8">
           <div class="mb-2 text-xl font-bold text-yellow-500">
             <p>Nome do Prato 1</p>
@@ -81,7 +120,9 @@
           </div>
         </div>
         <div class="flex justify-end pb-10 mr-4">
-          <button class="bg-transparent hover:bg-[#CDA45E] text-white border-2 border-[#CDA45E] rounded-full px-4 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out">
+          <button
+            class="bg-transparent hover:bg-[#CDA45E] text-white border-2 border-[#CDA45E] rounded-full px-4 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out"
+          >
             Adicionar ao carrinho
           </button>
         </div>
@@ -89,4 +130,3 @@
     </div>
   </div>
 </div>
-
