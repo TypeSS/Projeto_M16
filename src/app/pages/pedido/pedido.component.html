@@ -1,49 +1,32 @@
-<div class="flex flex-col justify-between flex-none gap-10 lg:flex-row lg:flex-wrap">
-  <div class="lg:border-2 lg:border-[#CDA45E] flex items-center justify-center rounded-lg p-3 flex-wrap border-[#1A1814]">
-   <button
-    routerLinkActive="bg-[#CDA45E] !text-white " [routerLinkActiveOptions]="linkActiveOptions" class="bg-transparent text-white w-[150px] h-[50px]  rounded-md border-2 border-[#CDA45E] lg:border-none m-1 " (click)="Produtos()">Todos</button>
-   <button #sorter class="cursor-pointer bg-transparent text-white p-[10px] w-[150px] flex flex-wrap justify-center items-center h-[50px]  rounded-md border-2 border-[#CDA45E] lg:border-none m-1"
-   routerLinkActive="bg-[#CDA45E] text-white border-2 border-[#1A1814]" [routerLinkActiveOptions]="linkActiveOptions"
-   *ngFor="let categoria of categorias" (click)="ProdutosCat(categoria.id_categoria)">{{categoria.categoria}}</button>
-  </div>
- </div>
-
- <div class="flex flex-col flex-wrap items-center justify-around w-5/6 gap-12 mt-10 md:flex-row">
-  <app-item2 *ngFor="let produto of produtos" [produto]="produto"></app-item2>
-  </div>
-
-<div class="flex flex-row items-center justify-center gap-3 mt-14">
-  <div
-    class="flex items-center justify-center w-2/6 border border-yellow-500 rounded-lg"
-  >
-    <!--Card 1-->
-    <div class="flex flex-row w-full rounded-lg">
-      <img
-        class="flex flex-col bg-cover rounded-lg lg:w-80"
-        style="background-image: url('../../../assets/FrontPageimg.jpg')"
-      />
-      <div
-        class="bg-[#1A1814] rounded-b lg:rounded-b-none lg:rounded-r pt-16 flex flex-col justify-between leading-normal w-[500px]"
-      >
-        <div class="p-5 mb-8">
-          <div class="mb-2 text-xl font-bold text-yellow-500">
-            <p>Nome do Prato 1</p>
-          </div>
-          <div class="flex items-center">
-            <div class="text-sm">
-              <p class="leading-none text-yellow-500">Ocasiao 1</p>
-            </div>
-          </div>
-        </div>
-        <div class="flex justify-end pb-10 mr-4">
-          <button
-            class="bg-transparent hover:bg-[#CDA45E] text-white border-2 border-[#CDA45E] rounded-full px-4 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out"
-          >
-            Adicionar ao carrinho
-          </button>
-        </div>
+<div class="flex">
+  <!-- Sidebar -->
+  <div class="fixed top-0 left-0 h-full w-32 flex justify-center items-center md:w-64 bg-[#0c0b09cc] text-white">
+    <div class="flex flex-col justify-between h-full">
+      <div class="flex flex-col gap-10 p-4">
+        <button
+          routerLinkActive="bg-[#CDA45E] !text-white"
+          [routerLinkActiveOptions]="linkActiveOptions"
+          class="bg-transparent text-white w-full h-[50px] rounded-md border-2 border-[#CDA45E]"
+          (click)="Produtos()"
+        >
+          Todos
+        </button>
+        <button
+          #sorter
+          class="cursor-pointer bg-transparent text-white p-2 w-full flex justify-center items-center h-[50px] rounded-md border-2 border-[#CDA45E]"
+          routerLinkActive="bg-[#CDA45E] text-white border-2 border-[#1A1814]"
+          [routerLinkActiveOptions]="linkActiveOptions"
+          *ngFor="let categoria of categorias"
+          (click)="ProdutosCat(categoria.id_categoria)"
+        >
+          {{ categoria.categoria }}
+        </button>
       </div>
     </div>
+  </div>
+  
+  <div class="flex flex-col flex-wrap items-end justify-end w-full gap-8">
+    <app-item2 *ngFor="let produto of produtos" class="w-1/2 m-5 md:m-0 rounded-xl" [produto]="produto"></app-item2>
   </div>
 </div>
 
