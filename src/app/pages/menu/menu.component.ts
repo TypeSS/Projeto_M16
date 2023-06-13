@@ -43,10 +43,8 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
 
     this.Produtos();
-
     this.infocategorias.getCategoria().subscribe((res)=>{
       this.categorias = res;
-
     })
 }
 
