@@ -12,6 +12,6 @@ export class ProdutosComponent {
 @Input() titulo:string;
 @Input() preco:number;
 @Input() descricao:string;
-@Input() img:string;
+@Input() img:string;  
 }
 
