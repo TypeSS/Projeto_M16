@@ -46,6 +46,7 @@ export class MenuComponent implements OnInit {
 
     this.infocategorias.getCategoria().subscribe((res)=>{
       this.categorias = res;
+
     })
 }
 
@@ -61,6 +62,7 @@ ProdutosCat(id_categoria:number){
 Produtos(){
   this.prodinfo.getProdutos().subscribe((res)=>{
     this.produtos = res;
+    console.log(this.produtos)
   })
 }
 }
