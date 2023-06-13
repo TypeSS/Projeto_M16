@@ -11,7 +11,7 @@ import { RestauranteService } from 'src/app/services/restaurante/restaurante.ser
 })
 export class OrderbookComponent implements OnInit {
   data: string;
-  hora: string;
+  hora: string = '00:00';
   resinfo: object;
   listarest: Restaurante[];
   nPessoas: number;
@@ -43,7 +43,7 @@ Reservas() {
     "nPessoas":this.nPessoas,
   }
 
-  
+
   console.log(this.resinfo)
 
 

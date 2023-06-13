@@ -7,7 +7,7 @@
         <div class="flex flex-col items-center justify-center ">
             <div class="flex justify-between p-2 ">
             <p-calendar [showIcon]="true" [(ngModel)]="data" class="m-1 bg-[#1A1814" dataType="string" dateFormat="yy/mm/dd" placeholder="yy/mm/dd"	 [ngModelOptions]="{standalone: true}"  />
-            <p-calendar [showIcon]="true" [(ngModel)]="hora" class="m-1 bg-[#1A1814" dataType="string" [timeOnly]="true" placeholder="--:--" [ngModelOptions]="{standalone: true}"  />
+            <p-calendar [stepMinute]="10" [showIcon]="true" [(ngModel)]="hora" class="m-1 bg-[#1A1814" dataType="string" [timeOnly]="true" placeholder="--:--" [ngModelOptions]="{standalone: true}"  />
             <input pInputText type="number" class="m-1 w-16 bg-[#1A1814]" placeholder="Nº de Pessoas" [(ngModel)]="nPessoas" [ngModelOptions]="{standalone: true}"  />
             <p-dropdown [options]="listarest" class="m-1 bg-[#1A1814]" styleClass="bg-[#1A1814]" [(ngModel)]="selectedRes" [ngModelOptions]="{standalone: true}" optionLabel="nome_restaurante"></p-dropdown>
             </div>

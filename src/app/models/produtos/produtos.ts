@@ -3,7 +3,7 @@ export interface Produtos {
   descricao: string;
   preco: number;
   categoria: string;
-  url_imagem: string;
+  imagem: string;
 }
 
 export interface Ocasioes{
