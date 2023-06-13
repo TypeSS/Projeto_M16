@@ -42,6 +42,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ReservasCComponent } from './pages/reservas-c/reservas-c.component';
 import { TagModule } from 'primeng/tag';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { Item2Component } from './components/item2/item2.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
     SidebarComponent,
     PerfilComponent,
     ReservasCComponent,
+    Item2Component,
   ],
   imports: [
     BrowserModule,
