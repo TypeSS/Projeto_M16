@@ -1,49 +1,62 @@
-<div *ngIf="userinfo">
-<main class="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
-  <header class="header bg-[#0C0B09] shadow py-4 px-4">
-    <div class="header-content flex items-center flex-row">
-      <form action="#">
-        <div class="hidden md:flex relative">
-          <div
-            class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400"
-          >
+<div class="container py-8 mx-auto w-screen ml-7">
+    <div >
+      <h1 class="mb-6 text-3xl font-bold text-white">
+            Informações do Cliente
+
+      </h1>
+      <p class="mb-6 text-lg text-white">Gerenciar Informações do meu perfil</p>
+
+    </div>
+    <div class="border rounded-lg bg-[#1A1814] p-8">
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex flex-col ml-16">
+
+          <div class="mb-4">
+            <div class="font-bold text-white">Nome:</div>
+            <div class="mt-2">
+              <div
+              class="  text-lg text-gray-500 dark:text-gray-400 duration-300 transform  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                *ngIf="!editingNome"
+                (dblclick)="editingNome = true"
+              >
+                {{ nome }}
+              </div>
+              <input
+                *ngIf="editingNome"
+                [(ngModel)]="nome"
+                (blur)="editingNome = false"
+                class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"            />
+            </div>
           </div>
+          <div>
+            <div class="font-bold text-white">Email:</div>
+            <div class="mt-2">
+              <div
+              class="  text-lg text-gray-500 dark:text-gray-400 duration-300 transform  origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                *ngIf="!editingEmail"
+                (dblclick)="editingEmail = true"
+              >
+                {{ email }}
+              </div>
+              <input
+                *ngIf="editingEmail"
+                [(ngModel)]="email"
+                (blur)="editingEmail = false"
+                class="block py-2.5 px-0 w-full text-md text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 "            />
+            </div>
+          </div>
+
         </div>
-        <div class="flex md:hidden">
-          <a href="#" class="flex items-center justify-center h-10 w-10 border-transparent">
-            <svg
-              class="h-6 w-6 text-gray-500"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </a>
+        <div class="bg-black w-52 h-52">
+
         </div>
-      </form>
-      <div class="flex ml-auto mr-5 self-end">
-        <a href class="flex flex-row items-center">
-          <i class="pi pi-user text-white " style="font-size: 1.5rem"></i>
-          <span class="flex flex-col ml-2">
-            <span class="truncate font-semibold tracking-wide leading-none text-white">{{nome}}</span>
-          </span>
-        </a>
+      </div>
+      <div class="flex justify-end">
+        <button
+          class="px-6 py-3 text-white bg-yellow-500 rounded-lg hover:bg-yellow-600"
+        >
+          Salvar
+        </button>
       </div>
     </div>
-  </header>
-  <div class="main-content flex flex-col flex-grow p-4">
-    <h1 class="font-bold text-2xl text-white">Dados cliente</h1>
-
   </div>
-
-  <footer class="footer px-4 py-6">
-    <div class="footer-content">
-      <p class="text-sm text-gray-600 text-center">jhon o melhor <a href="https://twitter.com/iaminos">by JhonH</a></p>
-    </div>
-  </footer>
-</main>
-</div>

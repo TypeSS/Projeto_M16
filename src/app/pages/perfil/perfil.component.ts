@@ -9,6 +9,9 @@ import { ClientesService } from 'src/app/services/users/clientes.service';
 })
 export class PerfilComponent implements OnInit {
 
+  editingNome = false;
+  editingEmail = false;
+
   userinfo: Users;
   nome:string;
   email:string;
