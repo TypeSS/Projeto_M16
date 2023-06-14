@@ -45,6 +45,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { Item2Component } from './components/item2/item2.component';
 import { SidebarPedidosComponent } from './components/sidebar-pedidos/sidebar-pedidos.component';
 import { DockModule } from 'primeng/dock';
+import { InputNumberModule } from 'primeng/inputnumber';
+
 
 
 
@@ -95,7 +97,8 @@ import { DockModule } from 'primeng/dock';
     DropdownModule,
     ListboxModule,
     TagModule,
-    MultiSelectModule
+    MultiSelectModule,
+    InputNumberModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

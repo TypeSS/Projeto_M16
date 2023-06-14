@@ -19,7 +19,8 @@ export interface IsActiveMatchOptions {
  
 
 export class PedidoComponent implements OnInit {
- 
+  value1: number = 50;
+
 
   public linkActiveOptions: IsActiveMatchOptions = {
     matrixParams: 'exact',
