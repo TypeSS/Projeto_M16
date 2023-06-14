@@ -30,11 +30,11 @@ export class MenuComponent implements OnInit {
   @ViewChildren('sorter')
   sorter: HTMLElement;
 
+  sortVerif:boolean = true;
   produtos: Produtos[];
   categorias: Categoria[];
 
-  classe: string;
-  classList: any;
+  selectedIndex: number = -1;
 
   constructor(private prodinfo: ProdutosService, private infocategorias: RestauranteService){}
 
@@ -54,6 +54,8 @@ ProdutosCat(id_categoria:number){
     this.produtos = res
     console.log(this.produtos)
   })
+  this.selectedIndex = id_categoria
+  this.sortVerif = false;
 }
 
 
@@ -62,5 +64,7 @@ Produtos(){
     this.produtos = res;
     console.log(this.produtos)
   })
+  this.sortVerif= true;
+  this.selectedIndex = -1;
 }
 }
