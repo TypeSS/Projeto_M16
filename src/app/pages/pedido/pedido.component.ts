@@ -16,7 +16,7 @@ export interface IsActiveMatchOptions {
   templateUrl: './pedido.component.html',
   styleUrls: ['./pedido.component.css'],
 })
- 
+
 
 export class PedidoComponent implements OnInit {
   value1: number = 50;
@@ -31,7 +31,7 @@ export class PedidoComponent implements OnInit {
 
   produtos: Produtos[];
   categorias: Categoria[];
-  teste:any;
+  cartItem:Produtos[];
 
   constructor(private prodinfo: ProdutosService, private infocategorias: RestauranteService, private carrinho: CarrinhoService){}
 
@@ -55,14 +55,13 @@ export class PedidoComponent implements OnInit {
       this.produtos = res
       console.log(this.produtos)
     })
-
-    this.teste = this.carrinho.getCartItems();
-    console.log(this.teste)
   }
 
   Produtos(){
     this.prodinfo.getProdutos().subscribe((res)=>{
       this.produtos = res;
     })
+
+    this.cartItem = this.carrinho.getCartItems()
   }
 }

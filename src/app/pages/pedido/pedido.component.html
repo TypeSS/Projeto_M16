@@ -46,23 +46,18 @@
   <div class="mr-5 p-8 bg-black rounded-lg w-[500px] h-[500px]">
     <h2 class="mb-4 text-2xl font-bold">Carrinho de Compras</h2>
     <ul class="">
-      <li class="flex flex-col items-center justify-between">
+      <li *ngFor="let item of cartItem " class="flex flex-col items-center justify-between">
         <div class="flex flex-col self-start my-4">
-          <span class="text-lg font-bold">Nome do Item 1</span>
-          <span class="text-gray-500">$10.00</span>
+          <span class="text-lg font-bold">{{item.nomeproduto}}</span>
+          <span class="text-gray-500">{{item.preco}}</span>
         </div>
         <p-inputNumber
           [showButtons]="true"
           buttonLayout="horizontal"
           inputId="horizontal"
           spinnerMode="horizontal"
-          [step]="0.25"
-          decrementButtonClass="p-button-danger"
-          incrementButtonClass="p-button-success"
           incrementButtonIcon="pi pi-plus"
           decrementButtonIcon="pi pi-minus"
-          mode="currency"
-          currency="EUR"
         >
         </p-inputNumber>
         <button class="self-end px-4 py-2 my-5 text-white bg-red-500 rounded" >Remover</button>
