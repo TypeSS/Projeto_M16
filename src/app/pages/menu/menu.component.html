@@ -6,12 +6,10 @@
 <div class="flex flex-col justify-between flex-none gap-10 lg:flex-row lg:flex-wrap">
    <div class="lg:border-2  lg:border-yellow-500 flex items-center justify-center rounded-full flex-wrap border-[#1A1814]">
     <button [ngClass]="{'bg-yellow-500 text-black font-bold ':sortVerif, 'bg-transparent text-white':!sortVerif}" class="rounded-full w-[150px] h-[50px] m-1 border-2 border-[#CDA45E] lg:border-none" (click)="Produtos()">Todos</button>
-    <button *ngFor="let categoria of categorias" [ngClass]="{'bg-yellow-500 text-black font-bold m-1 animate-slideIn': selectedIndex == categoria.id_categoria, 'bg-transparent text-white': selectedIndex != categoria.id_categoria}"   class=" rounded-full w-[150px] h-[50px] ml-1 border-2 border-[#CDA45E] lg:border-none "
+    <button *ngFor="let categoria of categorias" [ngClass]="{'bg-yellow-500 text-black font-bold m-1': selectedIndex == categoria.id_categoria, 'bg-transparent text-white': selectedIndex != categoria.id_categoria}"   class=" rounded-full w-[150px] h-[50px] ml-1 border-2 border-[#CDA45E] lg:border-none "
     (click)="ProdutosCat(categoria.id_categoria)">
-    <span class="absolute top-0 left-0 h-full w-full bg-yellow-500 transform translate-x-0 transition-transform duration-300 ease-in-out" [class.translate-x-full]="!sortVerif"></span>
-  <span class="relative z-10 inline-flex items-center justify-center w-full h-full">
     {{categoria.categoria}}
-  </span></button>
+</button>
   </div>
 </div>
 
