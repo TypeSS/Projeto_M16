@@ -1,33 +1,71 @@
 <div class="flex flex-row">
   <!-- Sidebar -->
-  <div class="fixed top-0 left-0 h-full w-32 flex justify-center items-center md:w-64 bg-[#0c0b09cc] text-white">
-    <div class="flex flex-col justify-between h-full">
-      <div class="flex flex-col gap-10 p-4">
-        <button
-          routerLinkActive="bg-[#CDA45E] !text-white"
-          [routerLinkActiveOptions]="linkActiveOptions"
-          class="bg-transparent text-white w-full h-[50px] rounded-md border-2 border-[#CDA45E]"
-          (click)="Produtos()"
-        >
-          Todos
-        </button>
-        <button
-          #sorter
-          class="cursor-pointer bg-transparent text-white p-2 w-full flex justify-center items-center h-[50px] rounded-md border-2 border-[#CDA45E]"
-          routerLinkActive="bg-[#CDA45E] text-white border-2 border-[#1A1814]"
-          [routerLinkActiveOptions]="linkActiveOptions"
-          *ngFor="let categoria of categorias"
-          (click)="ProdutosCat(categoria.id_categoria)"
-        >
-          {{ categoria.categoria }}
-        </button>
-      </div>
+  <aside
+  class="sidebar w-32 sm:w-64 h-screen md:shadow transform  md:translate-x-0 transition-transform duration-150 ease-in bg-[#0C0B09] mr-0 sm:mr-5"
+  >
+  <div class="flex items-center justify-center py-4 sidebar-header">
+    <div class="inline-flex">
+      <a href="#" class="inline-flex flex-row items-center">
+        <span
+        class="text-xl font-bold text-center text-white leading-56 font-poppins">
+        <span class="text-yellow-500">Menu</span> do Chefe
+      </span>          </a>
     </div>
   </div>
-
-  <div class="flex flex-row flex-wrap justify-center w-full gap-8">
+  <div class="px-4 py-6 sidebar-content">
+  
+    <div class="flex flex-col gap-10 p-4">
+      <button
+        routerLinkActive="bg-[#CDA45E] !text-white"
+        class="bg-transparent text-white text-[14px] sm:text-xl w-full h-[50px] rounded-md border-2 border-[#CDA45E]"
+        (click)="Produtos()"
+      >
+        Todos
+      </button>
+      <button
+        #sorter
+        class="cursor-pointer bg-transparent text-white p-2 sm:text-xl  text-[10px] w-full flex justify-center items-center h-[50px] rounded-md border-2 border-[#CDA45E]"
+        routerLinkActive="bg-[#CDA45E] text-white border-2 border-[#1A1814]"
+        *ngFor="let categoria of categorias"
+        (click)="ProdutosCat(categoria.id_categoria)"
+      >
+        {{ categoria.categoria }}
+      </button>
+    </div>
+  </div>
+  </aside>
+    <div class="flex flex-row flex-wrap m-0 my-5 ml-5 sm:m-10">
     <app-item2 *ngFor="let produto of produtos" class="w-1/2 m-5 md:m-0 rounded-xl" [produto]="produto"></app-item2>
   </div>
+  
+  <div class="p-8 m-5 bg-black rounded-lg">
+    <h2 class="mb-4 text-2xl font-bold">Carrinho de Compras</h2>
+    <ul class="">
+      <li class="flex flex-col items-center justify-between">
+        <div class="flex flex-col">
+          <span class="text-lg font-bold">Nome do Item 1</span>
+          <span class="text-gray-500">$10.00</span>
+        </div>
+        <div class="flex items-center justify-center w-32 h-32 border border-gray-400 rounded">
+          <button class="w-8 h-8 bg-black rounded" >
+            -
+          </button>
+          <div id="myNumber" class="mx-2 text-2xl font-bold">0</div>
+          <button class="w-8 h-8 bg-black rounded">
+            +
+          </button>
+        </div>
+                <button class="self-end px-4 py-2 my-5 text-white bg-red-500 rounded" >Remover</button>
+      </li>
+  
+    </ul>
+    <div class="flex items-center justify-between mt-4">
+      <span class="text-lg font-bold">Total:</span>
+      <span class="text-xl font-bold">$25.00</span>
+    </div>
+  </div>
+  
+  
 </div>
 
 

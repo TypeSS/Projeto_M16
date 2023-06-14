@@ -43,6 +43,9 @@ import { ReservasCComponent } from './pages/reservas-c/reservas-c.component';
 import { TagModule } from 'primeng/tag';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { Item2Component } from './components/item2/item2.component';
+import { SidebarPedidosComponent } from './components/sidebar-pedidos/sidebar-pedidos.component';
+import { DockModule } from 'primeng/dock';
+
 
 
 @NgModule({
@@ -69,6 +72,7 @@ import { Item2Component } from './components/item2/item2.component';
     PerfilComponent,
     ReservasCComponent,
     Item2Component,
+    SidebarPedidosComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,19 @@
-<div class="flex flex-row w-[500px]  rounded-lg">
-  <img class="flex flex-col bg-cover rounded-lg lg:w-80" style="background-image: url('../../../assets/FrontPageimg.jpg')" />
-  <div class="bg-[#1A1814] rounded-b lg:rounded-b-none lg:rounded-r pt-16 flex flex-col justify-between leading-normal w-[500px]">
-    <div class="p-5 mb-8">
-      <div class="mb-2 text-xl font-bold text-yellow-500">
-        <p>{{produto.nomeproduto}}</p>
+
+  <div class="flex flex-col sm:ml-5 shadow-xl rounded-xl w-[250px] sm:w-[500px] ml-0 ">
+    <img
+      class="object-cover w-full rounded-xl h-36"
+      src="../../../assets/FrontPageimg.jpg"    />
+    <div class="flex flex-col p-7 bg-[#1A1814]">
+      <h2 class="mt-1 text-xl font-bold truncate">data.title</h2>
+      <p>{{produto.nomeproduto}}</p>
+      <div class="flex flex-row items-center justify-start mt-5">
+        <p class="leading-none text-yellow-500">{{produto.preco | currency: "EUR"}}</p>
       </div>
-      <div class="flex items-center">
-        <div class="text-sm">
-          <p class="leading-none text-yellow-500">{{produto.preco | currency: "EUR"}}</p>
-        </div>
+      <div class="flex justify-end pb-10 mr-4">
+        <button (click)="onClick()" class="px-1 py-0 font-normal tracking-wider text-white uppercase transition duration-300 ease-in-out bg-transparent border-2 border-yellow-500 rounded-full sm:font-medium sm:px-4 sm:py-2 hover:bg-yellow-500 hover:text-black">
+          Adicionar ao carrinho
+        </button>
       </div>
-    </div>
-    <div class="flex justify-end pb-10 mr-4">
-      <button (click)="onClick()" class="px-1 py-0 font-normal tracking-wider text-white uppercase transition duration-300 ease-in-out bg-transparent border-2 border-yellow-500 rounded-full sm:font-medium sm:px-4 sm:py-2 hover:bg-yellow-500 hover:text-black">
-        Adicionar ao carrinho
-      </button>
     </div>
   </div>
-</div>
+

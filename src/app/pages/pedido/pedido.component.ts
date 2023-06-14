@@ -19,18 +19,7 @@ export interface IsActiveMatchOptions {
  
 
 export class PedidoComponent implements OnInit {
-  isMobileMenuOpen: boolean = false;
-
-  toggleMobileMenu(): void {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
-  verif: boolean = true; // Definindo a propriedade 'verif' como booleana
-  isMenuHidden: boolean = true; // Variável para controlar a exibição do menu
-
-  // Função para alternar a exibição do menu
-  toggleMenu() {
-    this.isMenuHidden = !this.isMenuHidden;
-  }
+ 
 
   public linkActiveOptions: IsActiveMatchOptions = {
     matrixParams: 'exact',

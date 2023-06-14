@@ -12,7 +12,7 @@ module.exports = {
       },
       keyframes: {
         slideIn: {
-          '0%': { transform: 'translateX(100%)' },
+          '0%': { transform: 'translateX(50%)' },
           '100%': { transform: 'translateX(0)' },
         }},
         animation: {
