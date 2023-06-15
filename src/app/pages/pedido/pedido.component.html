@@ -1,7 +1,7 @@
 <div class="flex flex-row">
   <!-- Sidebar -->
   <aside
-    class="relative w-32 sm:w-64 h-screen md:shadow transform md:translate-x-0 transition-transform duration-150 ease-in bg-[#0C0B09] mr-0 sm:mr-5"
+    class="  h-screen md:shadow transform md:translate-x-0 transition-transform duration-150 ease-in bg-[#0C0B09] mr-0 sm:mr-5"
   >
     <div class="flex items-center justify-center py-4 sidebar-header">
       <div class="inline-flex">
@@ -35,12 +35,12 @@
       </div>
     </div>
   </aside>
-  <div class="flex flex-row flex-wrap m-0 my-5 ml-5 sm:m-10">
+  <div class="flex flex-row flex-wrap gap-5 mx-10">
     <app-item2
       *ngFor="let produto of produtos"
-      class="w-1/2 md:m-0 rounded-xl"
-      [produto]="produto"
-    ></app-item2>
+      class=" md:m-0 rounded-xl"
+      [produto]="produto">
+    </app-item2>
   </div>
 
   <div class="mr-5 p-8 bg-black rounded-lg w-[500px] h-[500px]">
