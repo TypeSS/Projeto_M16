@@ -37,9 +37,6 @@ export class PedidoComponent implements OnInit {
 
 
   ngOnInit() {
-
-
-
     this.infocategorias.getCategoria().subscribe((res)=>{
       this.categorias = res;
     })
@@ -47,6 +44,8 @@ export class PedidoComponent implements OnInit {
     this.prodinfo.getProdutospCategoria(1).subscribe((res)=>{
       this.produtos = res
 })
+
+this.cartItem = this.carrinho.getCartItems()
 
   }
 
@@ -61,7 +60,10 @@ export class PedidoComponent implements OnInit {
     this.prodinfo.getProdutos().subscribe((res)=>{
       this.produtos = res;
     })
+  }
 
-    this.cartItem = this.carrinho.getCartItems()
+  RemoveItem(item:any){
+    this.carrinho.removeFromCart(item);
+
   }
 }
