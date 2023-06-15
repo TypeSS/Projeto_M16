@@ -1,18 +1,28 @@
+<div class="flex items-center justify-center">
+  <div
+    class="w-[280px] h-[350px]  bg-[#0C0B09] rounded-3xl shadow-xl overflow-hidden"
+  >
+    <div class=" ">
+      <div class="h-48 flex justify-center items-center"
+      style="background-image: url(https://imgmod16.blob.core.windows.net/teste/{{produto.imagem}});
+      background-size: cover;
+      background-position: center;
+    "></div>
 
-  <div class="flex flex-col sm:ml-5 shadow-xl rounded-xl w-[250px] sm:w-[500px] ml-0 ">
-    <img
-      class="object-cover w-full rounded-xl h-36"
-      src="../../../assets/FrontPageimg.jpg"    />
-    <div class="flex flex-col p-7 bg-[#1A1814]">
-      <h2 class="mt-1 text-xl font-bold truncate">{{produto.nomeproduto}}</h2>
-      <div class="flex flex-row items-center justify-start mt-5">
-        <p class="leading-none text-yellow-500">{{produto.preco | currency: "EUR"}}</p>
-      </div>
-      <div class="flex justify-end pb-10 mr-4">
-        <button (click)="onClick()" class="px-1 py-0 font-normal tracking-wider text-white uppercase transition duration-300 ease-in-out bg-transparent border-2 border-yellow-500 rounded-full sm:font-medium sm:px-4 sm:py-2 hover:bg-yellow-500 hover:text-black">
+      <div class="p-4 sm:p-6">
+        <p class="font-bold text-yellow-500 text-[18px] leading-7 mb-1">
+          {{ produto.nomeproduto }}
+        </p>
+        <div class="flex flex-col  justify-center">
+          <p class="text-[12px] font-bold text-white">
+            {{ produto.preco | currency : "EUR" }}
+          </p>
+          <button
+          class="px-2 py-1 mt-4 font-medium tracking-wider text-white uppercase transition duration-300 ease-in-out bg-transparent border-2 border-yellow-500 rounded-full hover:bg-yellow-500 hover:text-black">
           Adicionar ao carrinho
         </button>
+        </div>
       </div>
     </div>
   </div>
-
+</div>
