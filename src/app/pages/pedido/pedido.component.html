@@ -49,14 +49,15 @@
     </h2>
     <!--TESTAR ISSO DPS grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 -->
   <ul class="">
-      <li *ngFor="let item of cartItem" class="flex flex-col justify-center w-full item-animation">
+
+      <li *ngFor="let item of cartItem | slice: (currentPage - 1) * rows : currentPage * rows" class="flex flex-col items-start justify-between w-full item-animation">
         <div class="flex flex-col p-5 my-4 rounded-lg">
          <div class="flex flex-row w-full gap-24">
           <span class="self-start font-bold text-md ">{{item.nomeproduto}}</span>
           <i class="justify-center mr-16 text-sm text-red-700 cursor-pointer pi pi-times" (click)="RemoveItem(item)"></i>
          </div>
          <div>
-          
+
          </div>
         <span class="my-3 mr-8 text-gray-500">€{{item.preco}}</span>
         <p-inputNumber
@@ -67,13 +68,13 @@
         spinnerMode="horizontal"
         incrementButtonIcon="pi pi-plus"
         decrementButtonIcon="pi pi-minus"
-     
+
         [(ngModel)]="item.quantidade"  [ngModelOptions]="{standalone: true}"
         (ngModelChange)="updateCartItem(item)"
       >
       </p-inputNumber>
         </div>
-       
+
       </li>
     </ul>
     <p-paginator  [rows]="rows" [totalRecords]="cartItem.length" (onPageChange)="onPageChange($event)"></p-paginator>
