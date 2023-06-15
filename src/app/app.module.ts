@@ -47,6 +47,7 @@ import { SidebarPedidosComponent } from './components/sidebar-pedidos/sidebar-pe
 import { DockModule } from 'primeng/dock';
 import { InputNumberModule } from 'primeng/inputnumber';
 
+import { PaginatorModule } from 'primeng/paginator';
 
 
 
@@ -98,7 +99,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     ListboxModule,
     TagModule,
     MultiSelectModule,
-    InputNumberModule
+    InputNumberModule,
+    PaginatorModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

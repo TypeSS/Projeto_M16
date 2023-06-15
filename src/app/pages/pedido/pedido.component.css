@@ -9,7 +9,7 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
-  
+
   @keyframes move-to-cart {
     0% {
       transform: translateX(-100px) ;
@@ -18,3 +18,7 @@
       transform: translateX(0) ;
     }
   }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes

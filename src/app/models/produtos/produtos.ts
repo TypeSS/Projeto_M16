@@ -18,3 +18,10 @@ export interface PratoDoDia{
   categoria:string;
   ocasiao: string;
 }
+
+export interface ProdEnc{
+  nomeproduto:string;
+  preco:number;
+  quantidade:number;
+}
+

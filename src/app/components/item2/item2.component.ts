@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Produtos } from 'src/app/models/produtos/produtos';
+import { ProdEnc, Produtos } from 'src/app/models/produtos/produtos';
 import { CarrinhoService } from 'src/app/services/carrinho/carrinho.service';
 
 @Component({
@@ -9,9 +9,15 @@ import { CarrinhoService } from 'src/app/services/carrinho/carrinho.service';
 })
 export class Item2Component {
 @Input() produto:Produtos;
-
+ProdEnc: ProdEnc;
 constructor(private carrinho: CarrinhoService){}
 onClick(){
-  this.carrinho.addToCart(this.produto)
+
+  this.ProdEnc = {
+    "nomeproduto":this.produto.nomeproduto,
+    "preco":this.produto.preco,
+    "quantidade":1
+  }
+  this.carrinho.addToCart(this.ProdEnc)
 }
 }

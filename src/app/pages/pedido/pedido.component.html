@@ -47,6 +47,7 @@
     <h2 class="mb-4 text-2xl font-bold">Carrinho de Compras
       <li class="pi pi-shopping-cart text-xl"></li>
     </h2>
+<<<<<<< Updated upstream
     <ul class=" ">
       <li *ngFor="let item of cartItem" class="flex flex-col items-center justify-between item-animation">
         <div class="flex flex-col self-start  my-4">
@@ -59,20 +60,36 @@
          </div>
           <span class="text-gray-500 my-3">€{{item.preco}}</span>
           <p-inputNumber
+=======
+    <ul class="">
+      <li *ngFor="let item of cartItem | slice: (currentPage - 1) * rows : currentPage * rows" class="flex flex-col items-center justify-between item-animation">
+        <div class="flex flex-col self-start my-4">
+          <span class="text-lg font-bold">{{item.nomeproduto}}</span>
+          <span class="text-gray-500">€{{item.preco}}</span>
+        </div>
+        <p-inputNumber
+>>>>>>> Stashed changes
           [showButtons]="true"
           buttonLayout="horizontal"
           inputId="horizontal"
           spinnerMode="horizontal"
           incrementButtonIcon="pi pi-plus"
           decrementButtonIcon="pi pi-minus"
+<<<<<<< Updated upstream
           styleClass="h-[20px]"
           inputStyleClass="w-[50px]"
+=======
+          [(ngModel)]="item.quantidade"  [ngModelOptions]="{standalone: true}"
+          (ngModelChange)="updateCartItem(item)"
+>>>>>>> Stashed changes
         >
         </p-inputNumber>
         </div>
        
       </li>
     </ul>
+    <p-paginator  [rows]="rows" [totalRecords]="cartItem.length" (onPageChange)="onPageChange($event)"></p-paginator>
   </div>
-  
+
+
 </div>
