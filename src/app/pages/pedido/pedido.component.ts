@@ -9,13 +9,6 @@ import { SlicePipe } from '@angular/common';
 
 
 
-
-export interface IsActiveMatchOptions {
-  matrixParams: 'exact'|'subset'|'ignored';
-  queryParams: 'exact'|'subset'|'ignored';
-  paths: 'exact'|'subset';
-  fragment: 'exact'|'ignored';
-}
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',
@@ -26,20 +19,11 @@ export interface IsActiveMatchOptions {
 
 export class PedidoComponent implements OnInit {
   currentPage:number = 1;
-
-
-
-  public linkActiveOptions: IsActiveMatchOptions = {
-    matrixParams: 'exact',
-    queryParams: 'exact',
-    paths: 'exact',
-    fragment: 'exact',
-  };
-
   produtos: Produtos[];
   categorias: Categoria[];
   cartItem:ProdEnc[];
-
+  sortVerif:boolean = true;
+  selectedIndex: number = -1;
   rows:number = 3;
   first:number = 3;
 
@@ -64,12 +48,17 @@ this.cartItem = this.carrinho.getCartItems()
       this.produtos = res
       console.log(this.produtos)
     })
+    this.selectedIndex = id_categoria
+    this.sortVerif = false;
   }
 
   Produtos(){
     this.prodinfo.getProdutos().subscribe((res)=>{
       this.produtos = res;
+      console.log(this.produtos)
     })
+    this.sortVerif= true;
+    this.selectedIndex = -1;
   }
 
   RemoveItem(item:any){

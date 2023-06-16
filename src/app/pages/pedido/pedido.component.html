@@ -20,8 +20,8 @@
         <span class="flex justify-center text-yellow-500 mb-2">Categorias</span> 
         <hr class="border border-yellow-500">
        </div>
-        <button
-          routerLinkActive="bg-[#CDA45E] !text-white"
+
+        <button [ngClass]="{'bg-yellow-500 !text-black font-bold ':sortVerif, 'bg-transparent text-white':!sortVerif}"
           class="bg-transparent flex flex-row items-center justify-center h-10 px-3 rounded-lg text-gray-300 hover:bg-[#1A1814] hover:text-yellow-500"
           (click)="Produtos()"
         >
@@ -32,6 +32,7 @@
           class="cursor-pointer flex flex-row items-center justify-center  h-10 px-3 rounded-lg text-gray-300 hover:bg-[#1A1814] hover:text-yellow-500"
           routerLinkActive="bg-[#CDA45E]  text-white border-2 border-[#1A1814]"
           *ngFor="let categoria of categorias"
+          [ngClass]="{'bg-yellow-500 !text-black font-bold m-1 ': selectedIndex == categoria.id_categoria, 'bg-transparent text-white': selectedIndex != categoria.id_categoria}"
           (click)="ProdutosCat(categoria.id_categoria)"
         >
           {{ categoria.categoria }}
@@ -47,7 +48,8 @@
     </app-item2>
   </div>
 
-  <div class="w-1/3 p-8 m-5 bg-black rounded-lg h-full">
+ <div class="flex flex-col">
+  <div class="p-8 m-5 bg-black rounded-lg h-full">
     <h2 class="mb-4 text-2xl font-bold">Carrinho de Compras
       <li class="text-xl pi pi-shopping-cart"></li>
     </h2>
@@ -86,6 +88,23 @@
     </ul>
 
   </div>
-
-
+  <div class="p-8 m-5 bg-black rounded-lg ">
+    <h2 class="mb-4 text-xl font-bold">Outras informações
+      <li class=" pi pi-info-circle text-md"></li>
+    </h2>
+   <div class="mb-5 mt-4">
+     <p>Restaurante:</p>
+    <hr class="border border-yellow-500 w-[40px]">
+   </div>
+    <p-dropdown class=" mb-4 "  optionLabel="name"></p-dropdown>
+   <div class="mb-5 mt-4">
+     <p>Tipo de Levantamento:</p>
+    <hr class="border border-yellow-500 w-[40px]">
+   </div>
+    <p-dropdown class=" mb-4 "  optionLabel="name"></p-dropdown>
+  </div>
+  <div class="flex justify-center mb-10 k">
+    <p-button label="Encomendar" styleClass="!bg-yellow-500 !text-black p-button-rounded p-button-warning border-none "></p-button>
+  </div>
+</div>
 </div>
