@@ -5,7 +5,7 @@ import { ProdEnc, Produtos } from 'src/app/models/produtos/produtos';
   providedIn: 'root'
 })
 export class CarrinhoService {
-private items: any[] = [];
+private items: ProdEnc[] = [];
   constructor() { }
 
   addToCart(item:ProdEnc){

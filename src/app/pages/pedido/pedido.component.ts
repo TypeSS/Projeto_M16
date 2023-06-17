@@ -1,13 +1,17 @@
 import { transition } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { ProdEnc, Produtos } from 'src/app/models/produtos/produtos';
+import { Encomenda, ProdEnc, Produtos } from 'src/app/models/produtos/produtos';
 import { ProdutosService } from 'src/app/services/produtos/produtos.service';
-import { Categoria } from 'src/app/models/Restaurante/restaurante';
+import { Categoria, Restaurante } from 'src/app/models/Restaurante/restaurante';
 import { RestauranteService } from 'src/app/services/restaurante/restaurante.service';
 import { CarrinhoService } from 'src/app/services/carrinho/carrinho.service';
 import { SlicePipe } from '@angular/common';
+import { Router } from '@angular/router';
+import { AES } from 'crypto-js';
 
-
+interface tipo{
+  tipo:string
+}
 
 @Component({
   selector: 'app-pedido',
@@ -25,9 +29,20 @@ export class PedidoComponent implements OnInit {
   sortVerif:boolean = true;
   selectedIndex: number = -1;
   rows:number = 3;
-  first:number = 3;
+  listarest: Restaurante[];
+  selectedRes: Restaurante;
+  hoje:string;
+  EncCripto:string;
+  tipos: tipo[] =
+  [{"tipo":"Entrega"}, {"tipo":"Levantamento"}];
 
-  constructor(private prodinfo: ProdutosService, private infocategorias: RestauranteService, private carrinho: CarrinhoService){}
+
+
+  tipoEnc:tipo;
+
+  Encomenda: Encomenda;
+
+  constructor(private prodinfo: ProdutosService, private infocategorias: RestauranteService, private router: Router, private restaurantes:RestauranteService, private carrinho: CarrinhoService){}
 
 
   ngOnInit() {
@@ -35,10 +50,12 @@ export class PedidoComponent implements OnInit {
       this.categorias = res;
     })
 
-    this.prodinfo.getProdutospCategoria(1).subscribe((res)=>{
-      this.produtos = res
-})
+    this.restaurantes.getRestaurantes().subscribe((res)=>{
+      this.listarest = res;
+      console.log(this.listarest);
+    })
 
+this.Produtos()
 this.cartItem = this.carrinho.getCartItems()
 
   }
@@ -46,7 +63,6 @@ this.cartItem = this.carrinho.getCartItems()
   ProdutosCat(id_categoria:number){
     this.prodinfo.getProdutospCategoria(id_categoria).subscribe((res)=>{
       this.produtos = res
-      console.log(this.produtos)
     })
     this.selectedIndex = id_categoria
     this.sortVerif = false;
@@ -55,7 +71,6 @@ this.cartItem = this.carrinho.getCartItems()
   Produtos(){
     this.prodinfo.getProdutos().subscribe((res)=>{
       this.produtos = res;
-      console.log(this.produtos)
     })
     this.sortVerif= true;
     this.selectedIndex = -1;
@@ -63,13 +78,11 @@ this.cartItem = this.carrinho.getCartItems()
 
   RemoveItem(item:any){
     this.carrinho.removeFromCart(item);
-    console.log(this.cartItem.length)
   }
 
 
   updateCartItem(item: any) {
     if (this.cartItem.includes(item)) {
-      // If the item already exists in the cartItem list, increase the quantity by 1
       item.quantity += 1;
     }
   }
@@ -77,5 +90,29 @@ this.cartItem = this.carrinho.getCartItems()
   onPageChange(event: any) {
 
       this.currentPage = event.page + 1;
+  }
+
+  Encomendar(){
+    this.Encomenda = {
+      "id_utilizador":Number(localStorage.getItem("id")),
+      "id_restaurante":this.selectedRes.id_restaurante,
+      "tipoEnc":this.tipoEnc.tipo,
+      "estado":"Em preparação",
+      "precototal":0
+    }
+
+    const today = new Date();
+    const options: Intl.DateTimeFormatOptions = { weekday: 'long' };
+
+    this.hoje = today.toLocaleDateString('pt-PT',options).split(',')[0];
+
+
+
+
+    this.EncCripto = AES.encrypt(JSON.stringify(this.Encomenda), '123').toString();
+    localStorage.setItem('encomenda',this.EncCripto);
+
+    console.log(this.hoje)
+
   }
 }

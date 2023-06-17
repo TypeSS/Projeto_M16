@@ -1,4 +1,4 @@
-<div class="flex flex-row">
+<div class=" bg-[#1A1814] flex flex-row">
   <!-- Sidebar -->
   <aside
     class="h-screen md:shadow transform md:translate-x-0 transition-transform duration-150 ease-in bg-[#0C0B09] mr-0 sm:mr-5"
@@ -17,7 +17,7 @@
     <div class="px-4 py-6 ">
       <div class="flex flex-col gap-5">
        <div>
-        <span class="flex justify-center text-yellow-500 mb-2">Categorias</span> 
+        <span class="flex justify-center text-yellow-500 mb-2">Categorias</span>
         <hr class="border border-yellow-500">
        </div>
 
@@ -32,7 +32,7 @@
           class="cursor-pointer flex flex-row items-center justify-center  h-10 px-3 rounded-lg text-gray-300 hover:bg-[#1A1814] hover:text-yellow-500"
           routerLinkActive="bg-[#CDA45E]  text-white border-2 border-[#1A1814]"
           *ngFor="let categoria of categorias"
-          [ngClass]="{'bg-yellow-500 !text-black font-bold m-1 ': selectedIndex == categoria.id_categoria, 'bg-transparent text-white': selectedIndex != categoria.id_categoria}"
+          [ngClass]="{'bg-yellow-500 !text-black font-bold ': selectedIndex == categoria.id_categoria, 'bg-transparent text-white': selectedIndex != categoria.id_categoria}"
           (click)="ProdutosCat(categoria.id_categoria)"
         >
           {{ categoria.categoria }}
@@ -40,7 +40,7 @@
       </div>
     </div>
   </aside>
-  <div class="flex flex-row flex-wrap w-2/3 gap-5 ml-10">
+  <div class=" flex flex-row flex-wrap w-2/3 gap-5 ml-10">
     <app-item2
       *ngFor="let produto of produtos"
       class=" md:m-0 rounded-xl"
@@ -96,15 +96,15 @@
      <p>Restaurante:</p>
     <hr class="border border-yellow-500 w-[40px]">
    </div>
-    <p-dropdown class=" mb-4 "  optionLabel="name"></p-dropdown>
+    <p-dropdown [options]="listarest"  class=" mb-4 "  [(ngModel)]="selectedRes" [ngModelOptions]="{standalone: true}" optionLabel="nome_restaurante"></p-dropdown>
    <div class="mb-5 mt-4">
-     <p>Tipo de Levantamento:</p>
+     <p>Tipo de Encomenda:</p>
     <hr class="border border-yellow-500 w-[40px]">
    </div>
-    <p-dropdown class=" mb-4 "  optionLabel="name"></p-dropdown>
+    <p-dropdown [options]="tipos" class=" mb-4 " [(ngModel)]="tipoEnc" [ngModelOptions]="{standalone: true}"  optionLabel="tipo"></p-dropdown>
   </div>
   <div class="flex justify-center mb-10 k">
-    <p-button label="Encomendar" styleClass="!bg-yellow-500 !text-black p-button-rounded p-button-warning border-none "></p-button>
+    <p-button routerLink="/order" (onClick)="Encomendar()" label="Encomendar" styleClass="!bg-yellow-500 !text-black !font-bold p-button-rounded p-button-warning border-none "></p-button>
   </div>
 </div>
 </div>

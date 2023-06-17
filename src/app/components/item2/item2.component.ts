@@ -14,6 +14,7 @@ constructor(private carrinho: CarrinhoService){}
 onClick(){
 
   this.ProdEnc = {
+    "id_produto":this.produto.id_produto,
     "nomeproduto":this.produto.nomeproduto,
     "preco":this.produto.preco,
     "quantidade":1

@@ -46,7 +46,7 @@ import { Item2Component } from './components/item2/item2.component';
 import { SidebarPedidosComponent } from './components/sidebar-pedidos/sidebar-pedidos.component';
 import { DockModule } from 'primeng/dock';
 import { InputNumberModule } from 'primeng/inputnumber';
-
+import { AES, enc } from 'crypto-js';
 import { PaginatorModule } from 'primeng/paginator';
 
 
