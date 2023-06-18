@@ -48,6 +48,8 @@ import { DockModule } from 'primeng/dock';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { AES, enc } from 'crypto-js';
 import { PaginatorModule } from 'primeng/paginator';
+import { EncomendasCComponent } from './pages/encomendas-c/encomendas-c.component';
+import { TreeModule } from 'primeng/tree';
 
 
 
@@ -76,6 +78,7 @@ import { PaginatorModule } from 'primeng/paginator';
     ReservasCComponent,
     Item2Component,
     SidebarPedidosComponent,
+    EncomendasCComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,7 +103,8 @@ import { PaginatorModule } from 'primeng/paginator';
     TagModule,
     MultiSelectModule,
     InputNumberModule,
-    PaginatorModule
+    PaginatorModule,
+    TreeModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

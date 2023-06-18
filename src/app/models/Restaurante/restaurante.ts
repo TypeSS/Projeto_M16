@@ -31,4 +31,15 @@ export interface ResCli{
   observacoes:string;
 }
 
+export interface EncomendaTree{
+  id_encomenda:number;
+  nome:string;
+  nome_restaurante:string;
+  id_produto:number;
+  nomeproduto:string;
+  quant:number;
+  preco:number;
+  children?: EncomendaTree[];
+}
+
 

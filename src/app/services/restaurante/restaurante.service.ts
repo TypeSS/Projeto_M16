@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UrlService } from '../url/url.service';
 import { Observable } from 'rxjs';
-import { Categoria, ResCli, Reserva, Restaurante } from 'src/app/models/Restaurante/restaurante';
+import { Categoria, EncomendaTree, ResCli, Reserva, Restaurante } from 'src/app/models/Restaurante/restaurante';
 import { Encomenda, ProdEnc } from 'src/app/models/produtos/produtos';
 
 
@@ -38,6 +38,10 @@ export class RestauranteService {
 
   prodEnc(items:ProdEnc[]):Observable<ProdEnc[]>{
     return this.http.post<ProdEnc[]>(this.urlService.getUrl("prodenc"), items)
+  }
+
+  treeEnc():Observable<EncomendaTree[]>{
+    return this.http.get<EncomendaTree[]>(this.urlService.getUrl('encomenda'))
   }
 
 

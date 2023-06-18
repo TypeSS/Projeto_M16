@@ -82,8 +82,6 @@ precoTotal:number;
   .pipe(
     switchMap(() => this.restaurantes.prodEnc(this.items))
   )
-  .subscribe(() => {
-    // Code to execute after both operations are completed
-  });
+  .subscribe();
 }
 }
