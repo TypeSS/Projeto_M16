@@ -5,15 +5,15 @@
     <div class="flex flex-col items-stretch w-full mt-10 space-y-4 xl:flex-row jusitfy-center xl:space-x-8 md:space-y-6 xl:space-y-0">
         <div class="flex flex-col items-start justify-start w-full space-y-4 md:space-y-6 xl:space-y-8">
             <div class="flex flex-col items-start justify-start w-full px-4 py-4 bg-[#0c0c0c] md:py-6 md:p-6 xl:p-8">
-                <p class="text-lg font-semibold leading-6 text-white xl:leading-5">Carrinho</p>
-                <h1 *ngFor="let item of items" class="text-yellow-500"><span>{{item.quantidade}}x</span><span>{{item.nomeproduto}}</span><span>{{item.preco | currency: 'EUR'}}</span></h1>
+                <p class="text-lg font-semibold leading-6 text-white xl:leading-5">Carrinho: </p>
+                <h1 *ngFor="let item of items" class="text-yellow-500"><span>{{item.quantidade}} x</span><span> {{item.nomeproduto}}</span><span> {{item.preco | currency: 'EUR'}}</span></h1>
             </div>
             <div class="flex flex-col items-stretch justify-center w-full space-y-4 md:flex-row md:space-y-0 md:space-x-6 xl:space-x-8">
                 <div class="flex flex-col w-full px-4 py-6 space-y-6 md:p-6 xl:p-8 bg-[#0c0c0c] ">
-                    <h3 class="text-xl font-semibold leading-5 text-white">Preço</h3>
+                    <h3 class="text-xl font-semibold leading-5 text-white">Preço: </h3>
                     <div class="flex flex-col items-center justify-center w-full pb-4 space-y-4 border-b border-gray-200">
                         <div class="flex justify-between w-full">
-                            <p class="text-base leading-4 text-white">Subtotal</p>
+                            <p class="text-base leading-4 text-white">Subtotal: </p>
                             <p class="text-base leading-4 text-yellow-500">{{precoComida | currency:"EUR"}}</p>
                         </div>
                         <div class="flex items-center justify-between w-full">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="flex items-center justify-between w-full">
-                        <p class="text-base font-semibold leading-4 text-white">Total</p>
+                        <p class="text-base font-semibold leading-4 text-white">Total </p>
                         <p class="text-base font-semibold leading-4 text-yellow-500">{{precoTotal | currency:"EUR"}}</p>
                     </div>
                 </div>

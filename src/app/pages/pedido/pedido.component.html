@@ -17,7 +17,7 @@
     <div class="px-4 py-6 ">
       <div class="flex flex-col gap-5">
        <div>
-        <span class="flex justify-center text-yellow-500 mb-2">Categorias</span>
+        <span class="flex justify-center mb-2 text-yellow-500">Categorias</span>
         <hr class="border border-yellow-500">
        </div>
 
@@ -40,7 +40,7 @@
       </div>
     </div>
   </aside>
-  <div class=" flex flex-row flex-wrap w-2/3 gap-5 ml-10">
+  <div class="flex flex-row flex-wrap w-2/3 gap-5 ml-10 ">
     <app-item2
       *ngFor="let produto of produtos"
       class=" md:m-0 rounded-xl"
@@ -49,13 +49,12 @@
   </div>
 
  <div class="flex flex-col">
-  <div class="p-8 m-5 bg-black rounded-lg h-full">
+  <div class="p-8 m-5 bg-black rounded-lg">
     <h2 class="mb-4 text-2xl font-bold">Carrinho de Compras
       <li class="text-xl pi pi-shopping-cart"></li>
     </h2>
     <!--TESTAR ISSO DPS grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4 -->
   <ul class="">
-
       <li *ngFor="let item of cartItem | slice: (currentPage - 1) * rows : currentPage * rows" class="flex flex-col items-start justify-between w-full item-animation">
         <div class="flex flex-col p-5 my-4 rounded-lg">
          <div class="flex flex-row w-full gap-24">
@@ -82,7 +81,7 @@
         </div>
 
       </li>
-      <li class="items-end">
+      <li class="">
         <p-paginator  [rows]="rows" [totalRecords]="cartItem.length" (onPageChange)="onPageChange($event)"></p-paginator>
       </li>
     </ul>
@@ -92,16 +91,16 @@
     <h2 class="mb-4 text-xl font-bold">Outras informações
       <li class=" pi pi-info-circle text-md"></li>
     </h2>
-   <div class="mb-5 mt-4">
+   <div class="mt-4 mb-5">
      <p>Restaurante:</p>
     <hr class="border border-yellow-500 w-[40px]">
    </div>
-    <p-dropdown [options]="listarest"  class=" mb-4 "  [(ngModel)]="selectedRes" [ngModelOptions]="{standalone: true}" optionLabel="nome_restaurante"></p-dropdown>
-   <div class="mb-5 mt-4">
+    <p-dropdown [options]="listarest"  class="mb-4 "  [(ngModel)]="selectedRes" [ngModelOptions]="{standalone: true}" optionLabel="nome_restaurante"></p-dropdown>
+   <div class="mt-4 mb-5">
      <p>Tipo de Encomenda:</p>
     <hr class="border border-yellow-500 w-[40px]">
    </div>
-    <p-dropdown [options]="tipos" class=" mb-4 " [(ngModel)]="tipoEnc" [ngModelOptions]="{standalone: true}"  optionLabel="tipo"></p-dropdown>
+    <p-dropdown [options]="tipos" class="mb-4 " [(ngModel)]="tipoEnc" [ngModelOptions]="{standalone: true}"  optionLabel="tipo"></p-dropdown>
   </div>
   <div class="flex justify-center mb-10 k">
     <p-button routerLink="/order" (onClick)="Encomendar()" label="Encomendar" styleClass="!bg-yellow-500 !text-black !font-bold p-button-rounded p-button-warning border-none "></p-button>
