@@ -77,7 +77,7 @@ precoTotal:number;
   Encomendar(){
     console.log(this.encInfo);
     console.log(this.items);
-
+    this.encInfo.precototal = this.precoTotal;
     this.restaurantes.criarEnc(this.encInfo)
   .pipe(
     switchMap(() => this.restaurantes.prodEnc(this.items))
