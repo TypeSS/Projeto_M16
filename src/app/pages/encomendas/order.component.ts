@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AES, enc } from 'crypto-js';
-import { async } from 'rxjs';
+import { async, switchMap } from 'rxjs';
 import { Restaurante } from 'src/app/models/Restaurante/restaurante';
 import { Encomenda, ProdEnc } from 'src/app/models/produtos/produtos';
 import { Users } from 'src/app/models/users/users';
@@ -78,10 +78,12 @@ precoTotal:number;
     console.log(this.encInfo);
     console.log(this.items);
 
-    this.restaurantes.criarEnc(this.encInfo).subscribe((res)=>{
-      console.log(res)
-    }
-    )
-    this.restaurantes.prodEnc(this.items).subscribe()
+    this.restaurantes.criarEnc(this.encInfo)
+  .pipe(
+    switchMap(() => this.restaurantes.prodEnc(this.items))
+  )
+  .subscribe(() => {
+    // Code to execute after both operations are completed
+  });
 }
 }
