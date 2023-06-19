@@ -50,6 +50,10 @@ import { AES, enc } from 'crypto-js';
 import { PaginatorModule } from 'primeng/paginator';
 import { EncomendasCComponent } from './pages/encomendas-c/encomendas-c.component';
 import { TreeModule } from 'primeng/tree';
+import { DialogModule } from 'primeng/dialog';
+import { RestauranteComponent } from './pages/restaurante/restaurante.component';
+import { RestaurantesComponent } from './components/restaurantes/restaurantes.component';
+
 
 
 
@@ -79,6 +83,8 @@ import { TreeModule } from 'primeng/tree';
     Item2Component,
     SidebarPedidosComponent,
     EncomendasCComponent,
+    RestauranteComponent,
+    RestaurantesComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,7 +110,8 @@ import { TreeModule } from 'primeng/tree';
     MultiSelectModule,
     InputNumberModule,
     PaginatorModule,
-    TreeModule
+    TreeModule,
+    DialogModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

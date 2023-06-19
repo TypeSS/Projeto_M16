@@ -78,13 +78,13 @@
                {{res.nome_restaurante}}
             </td>
             <td>
-                {{res.data | date: 'dd/mm/yy'}}
+                {{res.data | date: 'dd/MM/yy'}}
             </td>
             <td>
-              {{ res.nPessoas }}
+              {{ res.horas }}
           </td>
             <td>
-                {{ res.horas }}
+                {{ res.nPessoas }}
             </td>
             <td>
               <p-tag [value]="res.situacao" [severity]="estadoReserva(res.situacao)"></p-tag>

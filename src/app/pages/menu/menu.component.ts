@@ -3,6 +3,7 @@ import { Produtos } from 'src/app/models/produtos/produtos';
 import { Categoria } from 'src/app/models/Restaurante/restaurante';
 import { ProdutosService } from 'src/app/services/produtos/produtos.service';
 import { RestauranteService } from 'src/app/services/restaurante/restaurante.service';
+import { UseractionService } from 'src/app/services/useraction/useraction.service';
 
 
 
@@ -21,10 +22,11 @@ export class MenuComponent implements OnInit {
   sortVerif:boolean = true;
   produtos: Produtos[];
   categorias: Categoria[];
+  logado:boolean = false;
 
   selectedIndex: number = -1;
 
-  constructor(private prodinfo: ProdutosService, private infocategorias: RestauranteService){}
+  constructor(private prodinfo: ProdutosService, private infocategorias: RestauranteService, private useraction:UseractionService){}
 
 
 
@@ -34,6 +36,10 @@ export class MenuComponent implements OnInit {
     this.infocategorias.getCategoria().subscribe((res)=>{
       this.categorias = res;
     })
+
+
+    this.logado = this.useraction.verifyUser();
+
 }
 
 

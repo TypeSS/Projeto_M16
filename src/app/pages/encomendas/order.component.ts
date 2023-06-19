@@ -8,6 +8,8 @@ import { Users } from 'src/app/models/users/users';
 import { CarrinhoService } from 'src/app/services/carrinho/carrinho.service';
 import { RestauranteService } from 'src/app/services/restaurante/restaurante.service';
 import { ClientesService } from 'src/app/services/users/clientes.service';
+import { UseractionService } from 'src/app/services/useraction/useraction.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -28,12 +30,23 @@ precoComida:number;
 fee:number;
 precoTotal:number;
 
+doacao:number;
+abrirDModal:boolean = false;
 
+logado:boolean = false;
 
-  constructor(private carrinho:CarrinhoService, private restaurantes:RestauranteService, private clientService: ClientesService) { }
+  constructor(private carrinho:CarrinhoService, private router:Router, private restaurantes:RestauranteService, private action:UseractionService, private clientService: ClientesService) { }
 
+  
 
    ngOnInit() {
+
+    this.logado = this.action.verifyUser()
+
+
+    if(this.logado == false){
+      this.router.navigateByUrl('/home')
+    }
 
     if(localStorage.getItem('encomenda') != undefined || localStorage.getItem('encomenda') != null ){
     this.encDec = AES.decrypt(localStorage.getItem('encomenda')!,'123').toString(enc.Utf8)
@@ -73,6 +86,11 @@ precoTotal:number;
     this.precoTotal = this.fee + this.precoComida;
   }
 
+  Doacao(){
+    if (this.doacao > 0){
+    this.abrirDModal = true;
+    }
+  }
 
   Encomendar(){
     console.log(this.encInfo);

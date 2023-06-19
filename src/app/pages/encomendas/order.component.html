@@ -43,7 +43,7 @@
                             <p class="text-base font-semibold leading-4 text-center text-white md:text-left">Nº de Telefone</p>
                             <p class="w-48 text-sm leading-5 text-center text-yellow-500 lg:w-full xl:w-48 md:text-left">{{telefone}}</p>
                         </div>
-                        <p-button routerLink="/order" label="Finalizar Encomenda" (onClick)="Encomendar()" styleClass="bg-transparent hover:bg-[#CDA45E] text-white border-2 border-[#CDA45E] rounded-full px-6 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out md:mr-4" ></p-button>
+                        <p-button routerLink="/order" label="Finalizar Encomenda" (onClick)="Encomendar()" styleClass="bg-transparent hover:bg-yellow-500 hover:text-black text-white border-2 border-yellow-500 rounded-full px-6 py-2 uppercase !font-medium tracking-wider transition duration-300 ease-in-out md:mr-4" ></p-button>
                 </div>
             </div>
         </div>
@@ -53,15 +53,15 @@
 	<div class='max-w-lg mx-auto overflow-hidden bg-[#0c0c0c] rounded-lg shadow-md'>
 		<div class="px-8 py-4 mt-3">
 			<div class="flex flex-col mb-8">
-				<h2 class="mb-2 text-2xl font-semibold tracking-wide text-white">Why you should donate?</h2>
-				<p class="text-base text-yellow-500">With your donation we can reach great lenghts! We can achieve amazing things. We're a small team.</p>
+				<h2 class="mb-2 text-2xl font-semibold tracking-wide text-white">Faz uma doação</h2>
+				<p class="text-base text-yellow-500">A tua doação pode fazer a diferença na vida de outras pessoas, basta adicionares um valor extra, não precisa de ser muito!</p>
 			</div>
-			<div class="bg-gray-100 rounded-lg">
-			
+			<div class="flex justify-center">
+                <p-inputNumber placeholder="Doação" [(ngModel)]="doacao" [ngModelOptions]="{standalone: true}"mode="currency" currency="EUR" locale="pt-PT"> </p-inputNumber>
 			</div>
 			<div class="flex justify-center py-4">
-                <button
-                class="bg-transparent hover:bg-[#CDA45E] text-white border-2 border-[#CDA45E] rounded-full px-6 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out md:mr-4"
+                <button (click)="Doacao()"
+                class="bg-transparent hover:bg-yellow-500 hover:text-black text-white border-2 border-yellow-500 rounded-full px-6 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out md:mr-4"
               >
                 Doar agora
               </button>			</div>
@@ -71,3 +71,12 @@
        </div>
 </div>
 </div>
+
+
+
+<p-dialog header="Header" [(visible)]="abrirDModal" [modal]="true" [style]="{ width: '50vw' }">
+    <ng-template pTemplate="header">
+        <span class="text-xl font-bold">Obrigado pela doação!</span>
+    </ng-template>
+<h1>Fizeste uma doação no valor de {{doacao | currency: "EUR"}}</h1>
+  </p-dialog>

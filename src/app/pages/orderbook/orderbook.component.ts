@@ -11,8 +11,6 @@ import { UseractionService } from 'src/app/services/useraction/useraction.servic
   styleUrls: ['./orderbook.component.css']
 })
 export class OrderbookComponent implements OnInit {
-  @ViewChild('NotRes') NotRes: any;
-
 
   data: string;
   hora: string = '00:00';

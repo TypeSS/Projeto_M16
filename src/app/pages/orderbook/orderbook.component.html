@@ -1,5 +1,5 @@
 
-<div *ngIf="logado else NotRes" class="bg-[#0C0B09]" #reserva>
+<div *ngIf="logado" class="bg-[#0C0B09]" #reserva>
         <div class="flex flex-col self-start m-10">
             <h2 class="text-3xl text-white font">Reserva</h2>
             <p class="text-[36px] font-bold text-yellow-500 ">Reservar Mesa</p>
@@ -23,7 +23,4 @@
         </button>
       </div>
     </div>
-    <ng-template #NotRes>
-      Please friend, login.
-    </ng-template>
 

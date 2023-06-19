@@ -8,6 +8,7 @@ import { CarrinhoService } from 'src/app/services/carrinho/carrinho.service';
 import { SlicePipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { AES } from 'crypto-js';
+import { UseractionService } from 'src/app/services/useraction/useraction.service';
 
 interface tipo{
   tipo:string
@@ -39,13 +40,21 @@ export class PedidoComponent implements OnInit {
 
 
   tipoEnc:tipo;
-
+logado:boolean = false;
   Encomenda: Encomenda;
 
-  constructor(private prodinfo: ProdutosService, private infocategorias: RestauranteService, private router: Router, private restaurantes:RestauranteService, private carrinho: CarrinhoService){}
+  constructor(private prodinfo: ProdutosService,private action:UseractionService, private infocategorias: RestauranteService, private router: Router, private restaurantes:RestauranteService, private carrinho: CarrinhoService){}
 
 
   ngOnInit() {
+
+    this.logado = this.action.verifyUser()
+
+
+    if(this.logado == false){
+      this.router.navigateByUrl('/home')
+    }
+
     this.infocategorias.getCategoria().subscribe((res)=>{
       this.categorias = res;
     })

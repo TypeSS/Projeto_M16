@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { EncomendaTree } from 'src/app/models/Restaurante/restaurante';
+import { Encomendas } from 'src/app/models/Restaurante/restaurante';
 import { RestauranteService } from 'src/app/services/restaurante/restaurante.service';
 import { TreeNode } from 'primeng/api';
+import { ProdEnc } from 'src/app/models/produtos/produtos';
 
-interface Column {
-  field: string;
-  header: string;
-}
 @Component({
   selector: 'app-encomendas-c',
   templateUrl: './encomendas-c.component.html',
@@ -14,20 +11,26 @@ interface Column {
 })
 export class EncomendasCComponent implements OnInit {
 
-  files!: TreeNode[];
-  encInfo:EncomendaTree[] = [];
-  lookup:any;
-  cols: Column[];
-  selectedFile!: TreeNode<any> | TreeNode<any>[] | null;
+  encomendas:Encomendas[] = [];
+  selectedEnc?:Encomendas;
+  abrirEnc:boolean = false;
+  prodInfo:ProdEnc[] = [];
 
+  constructor(private restService: RestauranteService){}
 
-  constructor(private restaurantes:RestauranteService){}
   ngOnInit() {
-    this.restaurantes.treeEnc().subscribe((res) => {
-      this.files = res
-  })
-
-  console.log(this.files)
+    this.restService.getEncomendaCli(Number(localStorage.getItem("id"))).subscribe((res)=>{
+      this.encomendas = res
+    })
   }
+
+  encInfo(){
+    this.abrirEnc = true;
+    console.log(this.selectedEnc?.estado)
+    this.restService.getProdEnc(this.selectedEnc!.id_encomenda).subscribe((res)=>{
+      this.prodInfo = res
+    });
+  }
+
 }
 
