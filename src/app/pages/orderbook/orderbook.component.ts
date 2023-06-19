@@ -1,7 +1,8 @@
 import { Time } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Reserva, Restaurante } from 'src/app/models/Restaurante/restaurante';
 import { RestauranteService } from 'src/app/services/restaurante/restaurante.service';
+import { UseractionService } from 'src/app/services/useraction/useraction.service';
 
 
 @Component({
@@ -10,6 +11,9 @@ import { RestauranteService } from 'src/app/services/restaurante/restaurante.ser
   styleUrls: ['./orderbook.component.css']
 })
 export class OrderbookComponent implements OnInit {
+  @ViewChild('NotRes') NotRes: any;
+
+
   data: string;
   hora: string = '00:00';
   resinfo: object;
@@ -18,13 +22,16 @@ export class OrderbookComponent implements OnInit {
   obs: string;
   selectedRes: Restaurante;
   id:string;
-  constructor(private restaurantes:RestauranteService){}
+  logado:boolean = false;
+  constructor(private restaurantes:RestauranteService, private useraction:UseractionService){}
 
   ngOnInit(){
     this.restaurantes.getRestaurantes().subscribe((res)=>{
       this.listarest = res;
-      console.log(this.listarest);
     })
+
+    this.logado = this.useraction.verifyUser()
+
 
   }
 
