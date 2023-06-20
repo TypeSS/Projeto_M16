@@ -65,6 +65,17 @@
             [routerLink]="'/home'"
             [routerLinkActiveOptions]="linkActiveOptions"
             routerLinkActive="text-yellow-500"
+            fragment="restaurantes"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500"
+          >
+            RESTAURANTES</a
+          >
+        </li>
+        <li *ngIf="verif">
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500"
             fragment="reserva"
             class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500"
           >

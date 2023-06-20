@@ -25,4 +25,8 @@ export class ProdutosService {
   getPratoDoDia(id:number):Observable<PratoDoDia[]>{
     return this.http.get<PratoDoDia[]>(this.urlService.getUrl("pratosdodia/"+id))
   }
+  
+  getOcasiao(ocasiao:object):Observable<any>{
+    return this.http.post<any>(this.urlService.getUrl('ocasiao'), ocasiao)
+  }
 }

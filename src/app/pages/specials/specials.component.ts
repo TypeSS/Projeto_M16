@@ -17,14 +17,12 @@ export class SpecialsComponent implements OnInit {
   ngOnInit() {
     this.prodinfo.getOcasioes().subscribe((res)=>{
       this.ocasioes = res;
-      console.log(this.ocasioes)
     })
   }
 
   getPratoDoDia(id:number){
     this.prodinfo.getPratoDoDia(id).subscribe((res)=>{
       this.pratosDoDia = res
-      console.log(this.pratosDoDia)
     })
   }
 

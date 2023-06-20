@@ -37,6 +37,7 @@ export class PedidoComponent implements OnInit {
   tipos: tipo[] =
   [{"tipo":"Entrega"}, {"tipo":"Levantamento"}];
 
+  ocasiao:object = {};
 
 
   tipoEnc:tipo;
@@ -63,6 +64,15 @@ logado:boolean = false;
       this.listarest = res;
       console.log(this.listarest);
     })
+
+    const today = new Date();
+    const options: Intl.DateTimeFormatOptions = { weekday: 'long' };
+
+    this.hoje = today.toLocaleDateString('pt-PT',options).split(',')[0];
+    this.ocasiao = {
+      "ocasiao":this.hoje
+    }
+
 
 this.Produtos()
 this.cartItem = this.carrinho.getCartItems()
@@ -109,14 +119,6 @@ this.cartItem = this.carrinho.getCartItems()
       "estado":"Em preparação",
       "precototal":0
     }
-
-    const today = new Date();
-    const options: Intl.DateTimeFormatOptions = { weekday: 'long' };
-
-    this.hoje = today.toLocaleDateString('pt-PT',options).split(',')[0];
-
-
-
 
     this.EncCripto = AES.encrypt(JSON.stringify(this.Encomenda), '123').toString();
     localStorage.setItem('encomenda',this.EncCripto);
