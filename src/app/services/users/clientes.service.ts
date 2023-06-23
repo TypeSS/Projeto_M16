@@ -19,4 +19,13 @@ export class ClientesService {
   getClienteID(id:number):Observable<Users>{
     return this.http.get<Users>(this.urlService.getUrl('user/'+id))
   }
+
+  updateCliente(info:Users):Observable<Users>{
+    return this.http.put<Users>(this.urlService.getUrl("updateuser"), info)
+  }
+
+  deleteCli(id:number):Observable<any>{
+    return this.http.delete(this.urlService.getUrl("cliente/"+id))
+  }
+
 }
