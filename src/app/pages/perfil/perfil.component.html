@@ -1,0 +1,139 @@
+<div class="container w-screen py-8 mx-auto ml-7">
+  <div>
+    <h1 class="mb-6 text-3xl font-bold text-white">Informações do Cliente</h1>
+    <p class="mb-6 text-lg text-white">Gerenciar Informações do meu perfil</p>
+  </div>
+  <div class="border rounded-lg bg-[#1A1814] p-8 w-1/2">
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex flex-col ml-16">
+        <div class="mb-4">
+          <div class="font-bold text-white">Nome:</div>
+          <div class="mt-2">
+            <div
+              class="text-lg text-gray-500 dark:text-gray-400 duration-300 transform origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              {{ nome }}
+            </div>
+          </div>
+
+        </div>
+        <div class="mb-4">
+          <div class="font-bold text-white">Email:</div>
+          <div class="mt-2">
+            <div
+              class="text-lg text-gray-500 dark:text-gray-400 duration-300 transform origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              {{ email }}
+            </div>
+          </div>
+
+        </div>
+        <div class="mb-4">
+          <div class="font-bold text-white">Telefone:</div>
+          <div class="mt-2">
+            <div
+              class="text-lg text-gray-500 dark:text-gray-400 duration-300 transform origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              {{ telefone }}
+            </div>
+          </div>
+
+        </div>
+        <div class="mb-4">
+          <div class="font-bold text-white">Morada:</div>
+          <div class="mt-2">
+            <div
+              class="text-lg text-gray-500 dark:text-gray-400 duration-300 transform origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              {{ morada }}
+            </div>
+          </div>
+
+        </div>
+        <div class="mb-4">
+          <div class="font-bold text-white">Código Postal:</div>
+          <div class="mt-2">
+            <div
+              class="text-lg text-gray-500 dark:text-gray-400 duration-300 transform origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              {{ codPostal }}
+            </div>
+          </div>
+
+        </div>
+        </div>
+    </div>
+    <div class="flex justify-end">
+      <button
+        class="px-3 py-2 text-white bg-yellow-500 rounded-lg hover:bg-yellow-600"
+      (click)="cliModal = true">
+        <i class="pi pi-pencil"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<p-dialog
+header="Header"
+[(visible)]="cliModal"
+[modal]="true"
+[style]="{ width: '50vv' }"
+>
+<ng-template pTemplate="header">
+  <span class="text-xl font-bold">Atualizar Cliente</span>
+</ng-template>
+  <div
+    class="flex flex-col justify-center gap-12 items-center "
+    *ngIf="userinfo"
+  >
+    <div class="flex flex-row justify-between gap-12 items-center mr-10">
+    <input
+    type="text"
+    pInputText
+    [(ngModel)]="this.nome"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <input
+    type="text"
+    pInputText
+    [(ngModel)]="this.email"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <p-inputNumber
+    type="text"
+    [(ngModel)]="this.telefone"
+    [ngModelOptions]="{ standalone: true }"
+  />
+   </div>
+   <div class="flex flex-row justify-between gap-12 items-center mr-10">
+    <input
+    type="text"
+    pInputText
+    [(ngModel)]="this.morada"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <input
+    type="text"
+    pInputText
+    [(ngModel)]="this.codPostal"
+    [ngModelOptions]="{ standalone: true }"
+  />
+   </div>
+  </div>
+<ng-template pTemplate="footer">
+  <div class="flex flex-row justify-center">
+    <p-button
+      icon="pi pi-check"
+      label="Atualizar"
+      (onClick)="updateCliente()"
+    ></p-button>
+
+    <p-button
+      icon="pi pi-times"
+      label="Cancelar"
+      (onClick)="cliModal = false"
+    ></p-button>
+  </div>
+</ng-template>
+</p-dialog>

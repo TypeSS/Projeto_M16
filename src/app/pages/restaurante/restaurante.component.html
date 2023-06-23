@@ -1,0 +1,17 @@
+<div class="flex flex-col items-center justify-center py-12 mx-auto bg-[#0C0B09]">
+    <div class="flex flex-col self-start m-10">
+      <h2 class="text-3xl font-bold text-white">Restaurantes</h2>
+      <p class="text-[36px] font-bold text-yellow-500">Vê os nossos restaurantes  </p>
+    </div>
+  
+  
+    <div class="flex flex-col flex-wrap items-center justify-around w-5/6 gap-12 mt-10 md:flex-row">
+      <app-restaurantes *ngFor="let rest of listarest" [corbg]="'bg-[#1A1814]'" [nome]="rest.nome_restaurante" [localidade]="rest.localidade" [morada]="rest.morada"></app-restaurantes>
+      </div>
+  </div>
+  
+  
+
+  
+  
+  

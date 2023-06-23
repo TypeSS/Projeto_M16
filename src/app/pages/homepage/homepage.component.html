@@ -1,0 +1,35 @@
+<div
+  id="hero"
+  class="flex justify-center items-center h-screen bg-hero-pattern bg-cover relative bg-top"
+  #menu
+>
+  <div class="bg-black bg-opacity-60 absolute h-full w-full"></div>
+  <div
+    class="flex justify-center items-center flex-col pt-110 md:pt-98-2xl h-44 px-10 absolute">
+    <h1
+      class="text-white font-bold text-4xl md:text-5xl lg:text-6xl leading-56 font-poppins text-center"
+    >
+      <span class="text-yellow-500">Menu</span> do Chefe
+    </h1>
+    <h2 class="text-gray-100 font-bold text-lg mt-4 md:mt-2 text-center">
+      Bem-vindo ao nosso restaurante
+    </h2>
+    <div class="mt-8">
+      <div class="flex flex-col  justify-center items-center sm:flex-row">
+        <button
+          [routerLink]="'/home'" fragment="reserva"
+          class="bg-transparent hover:bg-yellow-500 hover:text-black text-white border-2 border-yellow-500 rounded-full px-6 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out md:mr-4"
+        >
+          Reservar agora
+        </button>
+        <button
+        [routerLink]="'/home'" fragment="menu"
+          class="bg-transparent hover:bg-yellow-500 hover:text-black text-white border-2 border-yellow-500 rounded-full px-6 py-2 uppercase font-medium tracking-wider transition duration-300 ease-in-out md:mr-4 mt-3 sm:mt-0"
+        >
+          Ver o nosso Menu
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center items-center flex-col pt-110 md:pt-98"></div>
+</div>

@@ -1,1 +1,94 @@
-<p>navbar works!</p>
+<nav class="px-2 sm:px-4 py-2.5 w-screen flex justify-center bg-[#0c0b09cc]">
+  <!-- Hamburguer Button -->
+
+  <!-- Menu -->
+  <div
+    class="flex flex-row items-center justify-between w-full px-16 md:flex md:order-1 md:ml-auto"
+    id="mobile-menu-select"
+  >
+    <div>
+      <span class="text-yellow-500"
+        >M<span class="text-white">ENU </span><span class="text-white">DO </span
+        ><span class="text-yellow-500">C</span
+        ><span class="text-white">HEFE</span></span
+      >
+    </div>
+    <div>
+      <ul
+        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:border-transparent bg-gray-50 md:bg-transparent md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
+      >
+        <li>
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            HOME
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500 "
+            fragment="sobre"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            SOBRE NÓS</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500 "
+            fragment="menu"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            MENU</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500 "
+            fragment="especiais"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500 scroll-smooth"
+          >
+            PRATOS DO DIA</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500"
+            fragment="restaurantes"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500"
+          >
+            RESTAURANTES</a
+          >
+        </li>
+        <li *ngIf="verif">
+          <a
+            [routerLink]="'/home'"
+            [routerLinkActiveOptions]="linkActiveOptions"
+            routerLinkActive="text-yellow-500"
+            fragment="reserva"
+            class="block px-4 py-2 pl-3 pr-4 font-bold text-white uppercase rounded-lg hover:bg-[#423e32] hover:bg-opacity-40 hover:text-yellow-500"
+          >
+            RESERVAS</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="">
+      <div [ngClass]="{'border-yellow-500':verif, 'border-white':!verif}" class="flex justify-center w-8 h-8 border-2 rounded-full " >
+      <a [ngClass]="{'text-yellow-500':verif, 'text-white':!verif}" class="text-xl pi pi-user"   [routerLink]='"/"+logadoOuN'></a>
+      </div>
+  </div>
+
+  </div>
+</nav>

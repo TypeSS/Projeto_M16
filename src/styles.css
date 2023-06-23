@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "primeicons/primeicons.css";
+@import "primeng/resources/primeng.css";
+@import "primeng/resources/themes/arya-orange/theme.css";
+
+
+.navbar-wrapper {
+    position:fixed ;
+    top: 0;
+    left: -10;
+    width: 100%;
+    z-index: 1;
+    align-items: right;
+  }
+
+  .homepage-wrapper {
+    padding-top: 0px; /* Altura do navbar */
+  }
+
+  body{
+  overflow:scroll ;
+  -ms-overflow-style: none;/*hide in edge and explorer*/
+  scrollbar-width: none;/*firefox*/;}
+body::-webkit-scrollbar{
+  display: none;/*hide scroll ball chrome, safari and opera*/
+}
+
+html {
+  scroll-behavior: smooth;
+}

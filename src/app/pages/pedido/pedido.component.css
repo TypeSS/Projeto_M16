@@ -1,0 +1,20 @@
+.mobile-menu-button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  .item-animation {
+    animation-name: move-to-cart;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes move-to-cart {
+    0% {
+      transform: translateX(-100px) ;
+    }
+    100% {
+      transform: translateX(0) ;
+    }
+  }
