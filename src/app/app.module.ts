@@ -53,6 +53,7 @@ import { TreeModule } from 'primeng/tree';
 import { DialogModule } from 'primeng/dialog';
 import { RestauranteComponent } from './pages/restaurante/restaurante.component';
 import { RestaurantesComponent } from './components/restaurantes/restaurantes.component';
+import { ChartModule } from 'primeng/chart';
 
 
 
@@ -111,7 +112,7 @@ import { RestaurantesComponent } from './components/restaurantes/restaurantes.co
     InputNumberModule,
     PaginatorModule,
     TreeModule,
-    DialogModule
+    DialogModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],
