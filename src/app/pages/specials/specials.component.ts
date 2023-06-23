@@ -9,6 +9,7 @@ import { ProdutosService } from 'src/app/services/produtos/produtos.service';
 })
 export class SpecialsComponent implements OnInit {
 
+
   ocasioes: Ocasioes[];
   pratosDoDia: PratoDoDia[];
   constructor(private prodinfo: ProdutosService){}
